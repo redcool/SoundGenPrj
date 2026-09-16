@@ -1,0 +1,21 @@
+{
+  "comfyui_url": "http://127.0.0.1:8188",
+  "ffmpeg": "ffmpeg",
+  "python": "python",
+  "yue2_node_path": "",
+  "whisper_model_dir": "",
+  "demucs_model_dir": "",
+  "music3": {
+    "dit": "minimax_music3_dit_fp16.safetensors",
+    "text_encoder": "minimax_music3_text_encoder_pruned_int8_convrot.safetensors",
+    "dav": "minimax_music3_dav.safetensors",
+    "max_duration": 180,
+    "cfg_scale": 1.5,
+    "top_k": 50
+  },
+  "minimax": {
+    "api_key": "",
+    "base_url": "https://api.minimaxi.com/v1",
+    "model": "music-01-latest"
+  }
+}

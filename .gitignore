@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+
+# 运行产物（建议不入库：音频/日志很大）
+output/
+logs/
+*.flac
+*.mp3
+*.wav
+*.m4a
+
+# 本地配置差异（模型目录、临时脚本）
+models/
+.tmp_*
+.wheelhouse/
+
+# 编辑器
+.vscode/
+.idea/
+/input
