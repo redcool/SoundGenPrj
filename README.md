@@ -80,6 +80,7 @@ SoundGenPrj/
 │   ├── cover.py         # 旋律保留换词/换风格
 │   ├── separate.py      # Demucs 人声分离（去人声/取人声轨）
 │   └── transcribe.py    # Whisper 从歌声提取歌词（时间轴）
+├── tmp/                  # 临时代码与资源（不入 git）
 └── input/ output/ models/ logs/   # 建议目录
 ```
 

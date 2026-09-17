@@ -12,6 +12,9 @@ logs/
 *.wav
 *.m4a
 
+# 临时目录（临时代码/资源，不入库）
+tmp/
+
 # 本地配置差异（模型目录、临时脚本）
 models/
 .tmp_*
@@ -20,4 +23,3 @@ models/
 # 编辑器
 .vscode/
 .idea/
-/input

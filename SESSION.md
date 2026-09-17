@@ -6,6 +6,9 @@
 
 - 2026-09-16：需求文档 v1.0 完成；convert_audio 工具完成并已实际使用；歌词核查完成（见 docs/歌词核查报告.md）；v11/v13 歌曲文件被用户改名为中文名
 - 2026-09-16（续）：TECH_NOTES v2 增补“从零部署”前置清单；新增 config.json（comfyui_url 可改），scripts 全部改为读配置；AGENTS/SESSION 同步更新
+- 2026-09-16（终）：Music3 本地节点验证通过（180s 测试版 music3_test_00001.flac）；新增 scripts/music3_generate.py + config music3 节；散落临时文件全部归拢到 tmp/；新增 .gitignore 忽略 tmp/
+- 2026-09-16（Music3 用户反馈）：①未唱完 ②旋律不如 YuE2 ③中文发音清晰。采用用户抽卡法：probe=4×60s 多 seed 试旋律记住 seed → final=同 seed 300s 完整版（已固化为 music3_generate.py --mode probe/final；4×60s 抽卡进行中）
+- 2026-09-16（Music3 根因实验）：**同 seed 只有同时长才可复现（重渲染 60s 相关 1.000）**；时长改变旋律全变（60s vs 300s 前60s 相关 0.028、60s vs 150s 相关 0.019）。原因疑似 CUDA graph 注册 generator RNG 状态（comfy/model_prefetch.py graph.register_generator_state）→ RNG 消耗节奏与总帧数耦合。**规则：抽卡时长必须=定稿时长**；若重启 ComfyUI 加 --disable-cuda-graphs 后验证 60s→300s 旋律延续是否恢复（待测）
 
 ## 当前状态
 

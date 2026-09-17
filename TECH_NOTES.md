@@ -133,7 +133,7 @@
 当某项留空或文件不存在时，脚本回退到内置的默认路径。
 
 ## 7. 后处理工具
-- **Demucs 4.1.0（htdemucs 单模型）**：手动 wheel 安装路径记录于 .wheelhouse；权重约 81MB（HF 下载）；5090 上约 110 秒音频/秒处理
+- **Demucs 4.1.0（htdemucs 单模型）**：手动 wheel 安装路径记录于 tmp/wheelhouse；权重约 81MB（HF 下载）；5090 上约 110 秒音频/秒处理
 - **Whisper（transformers 5.x 自带）**：whisper-small 约 922MB；转写提取歌词与时间轴；注意 whisper tokenizer 无 pad_token，pipeline 批处理需设置 `pipe.tokenizer.pad_token_id = eos_token_id`
 - 无需 ffmpeg（读写用 soundfile / torchaudio）
 
@@ -142,7 +142,7 @@
 - 输出时长可能比谱面理论短（模型提前收尾）；要更精确可微调谱面尾部
 - 文件重名自动加序号（_00001）；API 提交的请求会排队按序执行
 - 一次生成不能中途停续；长曲建议分段规划
-- 沙箱/pip 受限环境：依赖用 PyPI wheel 手动下载 + zipfile 解包进 site-packages（已沉淀流程，见 .wheelhouse）
+- 沙箱/pip 受限环境：依赖用 PyPI wheel 手动下载 + zipfile 解包进 site-packages（已沉淀流程，见 tmp/wheelhouse）
 - 生成 Python 源码时注意换行转义（脚本模板里 \n 会变真实换行导致 SyntaxError）
 
 ## 9. 本机现状（示例，与 0-8 节对应）

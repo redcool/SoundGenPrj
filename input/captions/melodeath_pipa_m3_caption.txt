@@ -1,0 +1,23 @@
+Global Metadata
+Basic Attributes: bpm is 150, key is D minor. Melodic Death Metal fused with traditional Chinese instrumentation (electric pipa as co-lead) and modern cinematic production.
+Global Emotional Progression: Opens with a desolate, windswept atmosphere of a wasteland one hundred fifty years after the machines reawakened. The verses stay narrative and restrained, building an ominous weight, then explode into soaring anthemic choruses that carry a defiant, unbroken hope. A slower, heavier bridge breathes into an extended twin-lead solo, and the final chorus reaches full catharsis before fading into a lone pipa figure and wind.
+Application Scenarios & Imagery: Post-apocalyptic epic — a grey world where green has not yet returned, a river of blue flowing through rust and ruins, a lone survivor's long wait. Fits cinematic trailers, story-driven music videos, and atmospheric game soundtracks.
+Sonics & Production Profile: Wide cinematic soundstage. Electric pipa is doubled with hard-panned rhythm guitars to create a massive wall of sound; the pipa retains its bright, cutting, percussive pick attack and sits clearly above the riffing. Low end is tight and controlled, kick and bass locked. High-mids are bright for guitar clarity; master is loud and compressed but leaves a clean, present mid-range so the Mandarin lead vocal stays fully intelligible.
+
+Vocal Details
+Vocal Gender & Timbre: Male lead, warm mid-tenor with crisp articulation. Mandarin Chinese is sung with every syllable clear and accurate — diction is the top priority. Brief controlled grit at dramatic peaks only; no prolonged growling.
+Vocal Style: Narrative, legato phrasing in verses, conversational weight; strong sustained notes and anthemic delivery in choruses. Emotional arc from bleak fatigue (verse) to desperate resolve (bridge) to triumphant release (final chorus).
+Harmony/Backing Vocals: Layered male backing vocals in choruses doubling the lead melody, plus soft unison group vocals for epic breadth. Backing stays lower in the mix so the lead Mandarin melody remains front and intelligible.
+Vocal FX: Lead kept dry and close in verses; moderate hall reverb and gentle delay in choruses for grandeur; light compression; no effects that smear consonants.
+
+Arrangement
+Intro (~20s): wind and distant distorted guitar swell; electric pipa enters alone with a plucked, folk-like motif; drums roll in.
+Verse 1: driving palm-muted chugging riff with double-kick eighth groove; pipa answers the vocal phrases with short ornamental licks; vocal carries the story.
+Pre-Chorus: toms open up, harmony guitars widen, tension rises.
+Chorus: soaring harmonized lead guitars double the pipa melody; big anthemic vocal with gang backing; double-kick patterns drive relentlessly.
+Verse 2: sparser texture, pipa takes a wistful counter-melody over the riff; vocal more intimate.
+Chorus: returns fuller; additional pipa glissandi accent the hook.
+Bridge (half-time, ~25s): ominous and slower; bass and voices carry; pipa contemplative.
+Solo: twin lead trade between distorted guitar and electric pipa — fast 16th-note runs, wide-panned, over a galloping riff; builds to a peak.
+Final Chorus: maximum density; all forces together; pipa and guitars locked in unison melody; vocal delivers the climax.
+Outro (~20s): sudden drop to wind, distant drums, and a lone pipa repeating the opening motif, resolving on D minor.

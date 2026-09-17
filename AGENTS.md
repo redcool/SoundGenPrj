@@ -38,6 +38,7 @@ SoundGenPrj/
 ├── docs/              # 报告与记录（如 歌词核查报告.md）
 ├── scripts/           # YuE2 生成/后处理工具 CLI
 ├── tools/             # 通用工具（音频格式转换等）
+├── tmp/               # 临时代码/资源（不入 git；不引用其内容作交付依据）
 └── input/ output/ models/ workflows/ logs/   # 建议目录
 ```
 

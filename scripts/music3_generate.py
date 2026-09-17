@@ -2,15 +2,23 @@
 链路：UNETLoader(DiT) + CLIPLoader(minimax) + VAELoader(DAV)
      -> MiniMaxMusic3TextEncode(caption/lyrics/seed/max_duration/cfg/topk)
      -> EmptyMiniMaxMusic3LatentAudio -> KSampler -> VAEDecodeAudio -> SaveAudio
-说明：时长上限 = 9000 帧 / 25fps = 360 秒（模型可提前结束）。
+
+工作流（注意：实测「不同时长同 seed 旋律全变」，抽卡时长必须=定稿时长）：
+  1) probe：N 个 seed × <目标时长> 快速采样试旋律（时长小则快；如定稿 300s 则抽卡也用 300s）
+  2) final：同 seed × 同目标时长生成（music3 上限 360s）
+  ※ 若 ComfyUI 以 --disable-cuda-graphs 启动，60s 预筛→300s 定稿法可能恢复（待验证）
+
 用法：
-  python scripts/music3_generate.py --caption-file input/captions/x.txt --lyrics input/lyrics/x.txt --prefix audio/YuE2/m3_song --duration 180
+  python scripts/music3_generate.py --caption-file input/captions/x.txt --lyrics input/lyrics/x.txt --mode probe --prefix audio/YuE2/m3_probe
+  python scripts/music3_generate.py --caption-file ... --lyrics ... --mode final --seed 831105 --duration 300 --prefix audio/YuE2/m3_final
 """
-import argparse, json, os, sys
+import argparse, json, os, sys, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from lib_comfy import load_config, submit, wait, report
 
 MAX_SECONDS = 360.0
+PROBE_SECONDS = 60.0
+DEFAULT_SEEDS = [831104, 831105, 831106, 831107]
 
 def build(cfg, caption, lyrics, seed, duration, prefix):
     m3 = cfg.get("music3", {}) or {}
@@ -39,14 +47,20 @@ def build(cfg, caption, lyrics, seed, duration, prefix):
         "9": {"class_type": "SaveAudio", "inputs": {"audio": ["8", 0], "filename_prefix": prefix}},
     }
 
+def show(outputs):
+    for a in (outputs.get("9", {}).get("audio") or []):
+        print("  audio:", (a.get("subfolder") + "/" if a.get("subfolder") else "") + a.get("filename", ""))
+
 def main():
-    ap = argparse.ArgumentParser(description="本地 MiniMax Music3 生成歌曲")
+    ap = argparse.ArgumentParser(description="本地 MiniMax Music3 生成/抽卡")
     ap.add_argument("--caption", default=None, help="caption 文本（二选一）")
     ap.add_argument("--caption-file", default=None, help="caption 文件（推荐，工程 input/captions/）")
     ap.add_argument("--lyrics", default=None, help="歌词文件（推荐带 [Verse]/[Chorus] 标签）")
-    ap.add_argument("--seed", type=int, default=831104)
-    ap.add_argument("--duration", type=float, default=None, help="目标秒数，上限 360（config.music3.max_duration 优先）")
-    ap.add_argument("--prefix", default="audio/YuE2/music3", help="输出文件名前缀")
+    ap.add_argument("--mode", choices=["probe", "final"], default="final", help="probe=60s×多seed抽卡；final=指定seed完整版")
+    ap.add_argument("--seeds", default="", help="probe 模式 seed 列表，逗号分隔（默认 831104,831105,831106,831107）")
+    ap.add_argument("--seed", type=int, default=None, help="final 模式使用的 seed")
+    ap.add_argument("--duration", type=float, default=None, help="final 模式时长秒（默认 config，上限 360）")
+    ap.add_argument("--prefix", default="audio/YuE2/music3", help="输出文件名前缀（probe 自动追加 _seedN）")
     args = ap.parse_args()
 
     caption = args.caption
@@ -55,17 +69,36 @@ def main():
     if not caption:
         sys.exit("错误：需要 --caption 或 --caption-file")
     lyrics = open(args.lyrics, encoding="utf-8").read().strip() if args.lyrics else ""
-
     cfg = load_config()
-    dur = args.duration if args.duration is not None else float((cfg.get("music3") or {}).get("max_duration", 180))
-    prompt = build(cfg, caption, lyrics, args.seed, dur, args.prefix)
-    pid = submit(prompt)
-    print("prompt_id:", pid)
-    outputs = wait(pid)
-    report(outputs)
-    audio = outputs.get("9", {}).get("audio") or []
-    for a in audio:
-        print("audio:", a.get("subfolder", ""), a.get("filename", ""))
+
+    if args.mode == "probe":
+        seeds = [int(x) for x in args.seeds.split(",") if x.strip()] or DEFAULT_SEEDS
+        print("=== probe：%d 个 seed × %.0fs ===" % (len(seeds), PROBE_SECONDS), flush=True)
+        pids = []
+        for s in seeds:  # 全部提交，ComfyUI 按队列顺次执行
+            p = build(cfg, caption, lyrics, s, PROBE_SECONDS, args.prefix + ("_seed%d" % s))
+            pid = submit(p)
+            print("submitted seed", s, "->", pid, flush=True)
+            pids.append((s, pid))
+        t0 = time.time()
+        for s, pid in pids:
+            print("--- waiting seed", s, flush=True)
+            outs = wait(pid)
+            print("seed %d 完成 (%.0fs)：" % (s, time.time() - t0), flush=True)
+            show(outs); print(flush=True)
+        print("=== 请试听这 %d 个 60s 版，记住喜欢的 seed，再 --mode final --seed N --duration 300 ===" % len(seeds))
+        sys.exit(0)
+
+    # final
+    seed = args.seed if args.seed is not None else int((cfg.get("music3") or {}).get("seed", 831104))
+    dur = args.duration if args.duration is not None else float((cfg.get("music3") or {}).get("max_duration", 300))
+    print("=== final：seed %d × %.0fs ===" % (seed, dur), flush=True)
+    p = build(cfg, caption, lyrics, seed, dur, args.prefix)
+    pid = submit(p)
+    print("prompt_id:", pid, flush=True)
+    outs = wait(pid)
+    show(outs)
+    sys.exit(0)
 
 if __name__ == "__main__":
     main()
