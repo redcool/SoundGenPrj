@@ -25,3 +25,5 @@ models/
 .vscode/
 .idea/
 .output/
+# Node
+node_modules/
