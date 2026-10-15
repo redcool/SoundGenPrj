@@ -79,6 +79,9 @@ SoundGenPrj/
 │   ├── extend.py        # 谱面扩展（段落复制拉长）
 │   ├── cover.py         # 旋律保留换词/换风格
 │   ├── separate.py      # Demucs 人声分离（去人声/取人声轨）
+│   ├── analyze_audio.py # 音频特征分析（BPM/调性/频带/响度）
+│   ├── extend_audio.py  # 音频续写（原曲+同风格续段拼接延长）
+│   └── transpose_abc.py # ABC 谱面转调（cover 工具链依赖）
 │   └── transcribe.py    # Whisper 从歌声提取歌词（时间轴）
 ├── tmp/                  # 临时代码与资源（不入 git）
 └── input/ output/ models/ logs/   # 建议目录

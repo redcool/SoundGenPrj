@@ -1,0 +1,13 @@
+Global Metadata:
+genre: 历史摇滚·侠风 / 战鼓摇滚 (Chinese historical rock with wuxia flavor, war-drum rock)
+mood: 史诗、燃、悲壮 (epic, fiery, solemn)
+bpm: 140, time signature: 4/4, duration: ~5:00
+language: Mandarin Chinese
+instruments: war drums, heavy electric guitar, electric bass, anthemic female vocal, backing shouts
+
+Vocal Details:
+lead vocal: powerful female Mandarin vocal, low narrative verses, high anthemic shouting chorus
+backing: shouted chorus (no harsh metal screams), clean articulation on hook "登妇好三千 登旅万"
+
+Arrangement:
+intro (war-drum roll + guitar build) → verse1 (drums + guitar bed) → verse2 → chorus (full band + shout) → verse3 → chorus → bridge (drums + voice only, slow) → final chorus (bigger, double-time feel) → outro (drums fade)

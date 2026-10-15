@@ -1,5 +1,6 @@
 {
   "comfyui_url": "http://127.0.0.1:8188",
+  "comfyui_output_dir": "H:\\AI\\ComfyUI_windows_portable\\ComfyUI\\output",
   "ffmpeg": "ffmpeg",
   "python": "python",
   "yue2_node_path": "",

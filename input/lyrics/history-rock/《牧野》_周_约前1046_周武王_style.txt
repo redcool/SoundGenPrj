@@ -1,0 +1,23 @@
+# 《牧野》· 风格建议（style）—— 双风格变体（一次抽 2 个）
+
+> 基调：周武王（战神·开国·正）→ 燃·狂 / 燃·典礼；两张卡拉开差异（主奏/嗓音/混搭/速度四处不同）。
+
+## 配器卡 A（变体 A · seed 832301）—— 史诗金属 × 唢呐点睛
+- 基座：epic/power metal（140 BPM） | 混搭：epic metal | 主奏：**失真电吉他 + 唢呐点睛** | 副奏：管弦/铜管齐奏 | 节奏：**双踩军鼓 + 铜锣开场** | 嗓音：**高亢力量男声 + 作战齐唱** | 情绪：燃·狂 | 亮点：唢呐在金属里尖啸=牧野破晓
+
+## 配器卡 B（变体 B · seed 832302）—— world-rock × 电琵琶
+- 基座：摇滚（128 BPM） | 混搭：world-rock（部落节拍） | 主奏：**电琵琶（金戈扫弦）** | 副奏：部落人声和声 | 节奏：**手鼓 + 大锣** | 嗓音：**粗粝男声 + 部落和声** | 情绪：燃·典礼 | 亮点：电琵琶金戈扫弦 over 部落战鼓=会朝清明的仪式感
+
+## 引擎 style 文本
+### A（YuE2）
+```
+epic power metal war anthem, double-kick war drums and bronze gong opener, blazing lead guitar with suona accents, soaring powerful male lead with battle chants, massive anthemic chorus, 140 bpm, fierce triumphant energy, Mandarin Chinese vocals
+```
+### B（YuE2）
+```
+world rock war anthem, tribal drums and big gong, electric pipa riffs over driving bass, gritty male lead with tribal backing harmonies, ceremonial triumphant energy, 128 bpm, Mandarin Chinese vocals
+```
+
+## Music3 / suno 简版
+- A: epic power metal, war drums, blazing guitar with suona accents, soaring male lead with battle chants, 140 bpm, triumphant, 5 min, Mandarin
+- B: world rock, tribal drums, electric pipa riffs, gritty male lead with tribal harmonies, 128 bpm, ceremonial triumph, 5 min, Mandarin

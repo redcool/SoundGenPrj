@@ -30,7 +30,9 @@ def main():
     lines = []
     for c in result.get("chunks", []):
         ts = c.get("timestamp") or (0, 0)
-        lines.append("[%6.1f - %6.1f] %s" % (ts[0], ts[1], c.get("text", "").strip()))
+        t0 = ts[0] if isinstance(ts[0], (int, float)) else 0.0
+        t1 = ts[1] if isinstance(ts[1], (int, float)) else t0
+        lines.append("[%6.1f - %6.1f] %s" % (t0, t1, c.get("text", "").strip()))
     txt = chr(10).join(lines)
     with open(out, "w", encoding="utf-8") as f:
         f.write(txt)

@@ -1,0 +1,23 @@
+# 《羑里》· 风格建议（style）—— 双风格变体（一次抽 2 个）
+
+> 基调：周文王（哲王·忍·仁）→ 忍与悲凉；配器节两张卡拉开差异（主奏/嗓音/混搭三处不同）。
+
+## 配器卡 A（变体 A · seed 832201）
+- 基座：慢板史诗摇滚（90 BPM） | 混搭：epic + folk | 主奏：**古琴**（孤音）+ 大提琴低吟 | 副奏：管弦长音 | 节奏：稀疏大鼓（远雷） | 嗓音：低沉克制男声（哲王） | 情绪：忍·悲凉 | 亮点：古琴孤音 vs 远雷大鼓=「被囚的七年」
+
+## 配器卡 B（变体 B · seed 832202）
+- 基座：ambient 摇滚（78 BPM） | 混搭：ambient + orchestral | 主奏：**磬/石钟**（余音）+ 大提琴 | 副奏：弦乐群长铺底 | 节奏：闷音定音鼓（若隐若现） | 嗓音：气声半吟诵（玄静） | 情绪：幽深·玄 | 亮点：石钟余音回响=「爻辞未干」
+
+## 引擎 style 文本
+### A（YuE2）
+```
+slow epic rock with lone guqin plucks and low cello lines, weathered restrained male voice of a philosopher-king, sparse drums like distant thunder, orchestral long tones, wide melancholic mix, 90 bpm, Mandarin Chinese vocals
+```
+### B（YuE2）
+```
+ambient orchestral rock, deep cello and resonant stone-chime accents, hushed breathy half-spoken male vocal, muffled timpani pulses, cavernous reverb, understated suspenseful build, 78 bpm, Mandarin Chinese vocals
+```
+
+## Music3 / suno 简版
+- A: slow epic Chinese rock, guqin plucks, cello, distant thunder drums, restrained philosopher king male vocal, melancholic, 90 bpm, 5 minutes, Mandarin
+- B: ambient orchestral Chinese rock, stone chime and cello, breathy half-spoken male vocal, muffled timpani, cavernous reverb, 78 bpm, 5 minutes, Mandarin
