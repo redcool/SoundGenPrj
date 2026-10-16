@@ -1,0 +1,12 @@
+# 《国殇》· 风格卡（别字版 v1a / 易字版 v1b 共用 · 咬字对比试验）
+> 基调：九歌·国殇（战魂·英烈）→ 悲壮 · 燃；严格执行楚辞启示录：兮式拖腔、乱曰收尾、意象锤（戈/鼓/鬼雄）。
+> 试验设计：两版同风格同 seed 系，唯一变量=词稿（别字版=同音同调换生僻字；易字版=近义常用字）。
+## 配器（账本）
+- 基座：史诗战歌摇滚（108 BPM）
+- 主奏：编钟 + 失真电吉他（悲壮） | 副奏：低吟齐唱（战魂）
+- 节奏：战鼓 + 大锣 + 贝斯（行军律动）
+- 嗓音：吟诵式男中音（兮式拖腔）+ 副歌齐唱
+- 收尾：乱曰爆发（魂魄毅兮为鬼雄 三连）+ resolve & fade
+- 情绪：悲壮 · 燃 | 长度：约 4 分钟
+## 引擎 style（两版共用）
+epic war-metal rock with bronze bells and se zither, battle drums and gong, reciting heroic male voice with drawn-out vowels, chorus shouts on the refrain, 108 bpm, mournful and fierce, Mandarin Chinese vocals, end with a resolving sustained final chord then fade out

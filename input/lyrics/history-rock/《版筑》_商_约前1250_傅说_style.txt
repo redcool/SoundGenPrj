@@ -1,0 +1,12 @@
+# 《版筑》· 风格建议（style）—— 双风格变体
+
+> 基调：傅说（布衣拜相·贤相）→ 温·励志 / 智·哲思；两卡拉开。
+
+## 配器卡 A（v1a · seed 832701）—— 温厚民谣摇滚
+- 基座：folk rock（84 BPM） | 混搭：说书 | 主奏：木吉他 + 陶笛 | 副奏：— | 节奏：轻鼓 | 嗓音：温厚男中音（从泥到朝堂） | 情绪：温·励志
+## 配器卡 B（v1b · seed 832702）—— 智谋 art rock
+- 基座：art rock（100 BPM） | 混搭：哲思 | 主奏：钢琴 + 弦乐 | 副奏：synth 点缀 | 节奏：律动贝斯 | 嗓音：沉稳男声（盐梅调羹之味） | 情绪：智·哲思
+
+## 引擎 style
+- v1a: warm folk rock, acoustic guitar and ocarina, earnest male voice telling a from-mud-to-throne story, gentle 84 bpm, uplifting dignity, Mandarin Chinese vocals
+- v1b: intelligent art rock, piano and strings, calm wise male voice on the art of blending flavors in governance, measured philosophical groove, 100 bpm, Mandarin Chinese vocals

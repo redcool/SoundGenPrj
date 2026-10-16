@@ -1,0 +1,12 @@
+# 《网开一面》· 叙档风格（style）—— 双风格变体（长篇叙事）
+
+> 叙词 998 字（念白×2 + 章节×11 + 华彩）。基调：商汤（仁德·开国）→ 敬·史诗 / 温·说书。
+
+## 叙卡 A（n1a · seed 832803）—— 长篇史诗颂歌摇滚
+- 基座：史诗摇滚（88 BPM） | 混搭：颂歌 + 管弦 | 主奏：编钟 + 管弦乐群 | 副奏：合唱 | 节奏：仪式鼓 + 铜锣 | 嗓音：**庄重男中音叙唱 + 男声旁白（引/尾念白）** | 华彩：器乐间奏 | 情绪：敬·史诗
+## 叙卡 B（n1b · seed 832804）—— 说书长叙事
+- 基座：民谣叙事（76 BPM） | 混搭：说书 | 主奏：木吉他 + 竹笛 | 副奏：— | 节奏：轻鼓 + 手铃 | 嗓音：**说书人男声 + 大段念白** | 情绪：温·苍茫
+
+## 引擎 style
+- n1a: epic long-form ceremonial rock, bronze bells and orchestral strings with choir, dignified baritone narrating and singing with spoken intro/outro, instrumental interlude, solemn founding saga, 88 bpm, 6-7 minutes, Mandarin Chinese vocals
+- n1b: long-form folk storytelling, acoustic guitar and bamboo flute, storyteller male voice with heavy spoken sections, gentle drums, warm epic saga of a generous king, 76 bpm, 6-7 minutes, Mandarin Chinese vocals

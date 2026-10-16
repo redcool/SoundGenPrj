@@ -1,0 +1,9 @@
+# 《雊雉》· 风格建议（style）—— 双风格变体
+> 基调：祖己（谏臣·哲思）→ 静·哲 / 冷·峻；两卡拉开。
+## 卡 A（v1a · seed 832901）—— 哲思民谣
+- 基座：folk（88 BPM） | 主奏：木吉他 + 竹笛 | 节奏：轻铃 | 嗓音：**温和男声（说理）** | 情绪：静·哲
+## 卡 B（v1b · seed 832902）—— 冷峻叙事摇滚
+- 基座：叙事摇滚（96 BPM） | 主奏：钢琴 + 弦乐 | 节奏：低鼓 | 嗓音：**冷峻男中音（微言大义）** | 情绪：冷·峻
+## 引擎
+- v1a: philosophical folk, acoustic guitar and bamboo flute, gentle reasoning male voice, light bells, 88 bpm, subtle wisdom, Mandarin Chinese vocals
+- v1b: austere narrative rock, piano and strings, cool baritone delivering a warning with grace, restrained drums, 96 bpm, Mandarin Chinese vocals

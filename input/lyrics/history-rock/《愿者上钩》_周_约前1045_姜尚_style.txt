@@ -1,0 +1,23 @@
+# 《愿者上钩》· 风格建议（style）
+
+> 配器节（按《风格配器库》抽取——基调：姜子牙=谋士/垂钓 的「静×算」）
+> 基座：摇滚（118 BPM） | 混搭：techno + art rock | 主奏：**古筝琶音**（清透震慑） | 副奏：合成器 pad（宽立体声） | 节奏：合成贝斯 + 鼓机（精准钟摆） | 嗓音：techno 冷声（吟诵式男声） | 情绪：思 + 旷 | 亮点：古筝×鼓机=「愿者上钩」——姜太公的静，配电路的准
+
+## 1. YuE2（本地）
+--style：
+```
+intelligent techno art-rock, precise clockwork pulse with wide stereo art-rock guitars, guzheng plucked arpeggio as lead over spacious synth pads, cold clear male voice with dry wit and declamatory phrasing, driving 4/4 around 118 bpm, subtle trance build in the bridge, spacious mix, Mandarin Chinese vocals
+```
+参数：歌词驱动、planning full、guidance 1.0、seed 固定、max_duration 340、中文发声、词长 590+（已 pad 校验）。
+
+## 2. Music3 caption
+Global Metadata:
+genre: 历史摇滚 / 智谋 techno-art-rock（垂钓的闲 × 算尽的机）
+mood: 沉静、机敏、辽阔（composed, shrewd, vast）
+bpm: 118, 4/4, duration: ~5:00, language: Mandarin
+instruments: guzheng (lead arpeggio), synth pads, drum machine, synth bass, wide electric guitars, subtle distant chime
+Vocal: cold clear male lead, dry witty verses, anthemic yet cool chorus, spoken bridge
+Arrangement: guzheng + pad intro → verse1 → verse2 → chorus (drums enter) → verse3 → chorus → bridge (voice + guzheng only) → verse4 → final chorus (big, then wind-fade)
+
+## 3. suno 一行
+intelligent Chinese techno art-rock, guzheng arpeggio lead, synth pads, drum machine, cold clear male vocals, 118 bpm, 5 minutes, Mandarin

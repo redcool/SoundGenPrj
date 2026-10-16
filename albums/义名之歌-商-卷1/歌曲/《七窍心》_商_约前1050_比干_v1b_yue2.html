@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8"><title>曲谱渲染器</title>
+<link rel="stylesheet" href="abcjs-audio.css">
+<style>
+  body { font-family: "Microsoft YaHei", sans-serif; margin: 2rem; max-width: 1100px; margin-inline: auto; }
+  h1 { font-size: 1.3rem; }
+  .controls { margin: 0.8rem 0; display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; }
+  button { padding: 0.4rem 1rem; cursor: pointer; }
+  .paper { background: #fff; padding: 1.2rem; box-shadow: 0 1px 6px rgba(0,0,0,.25); }
+  #score svg { display: block; margin-inline: auto; }
+  #score svg { height: auto !important; max-width: 100% !important; }
+  .meta { color: #555; font-size: .85rem; margin-top: .8rem; white-space: pre-wrap; font-family: Consolas, monospace; }
+  @page { margin: 1cm; }
+  @media print {
+    .controls, #ctl, .meta { display: none !important; }
+    body { margin: 0; }
+    .paper { box-shadow: none; padding: 0; }
+    #score svg { width: 100% !important; height: auto !important; max-width: 100% !important; page-break-inside: avoid; break-inside: avoid; }
+    html, body, .paper, #score { overflow: visible !important; height: auto !important; }
+  }
+  /* 播放时音符高亮：事件携带的 SVG 元素加 .playing */
+  .playing, .playing * { fill: #ff6b35 !important; }
+  .playing, .playing g, .playing path { filter: drop-shadow(0 0 2px rgba(255,107,53,.9)); }
+  #ctl { margin: .6rem 0; }
+  #ctl .abcjs-midi-progress-background, #ctl .abcjs-midi-progress-indicator { background: #bbb; }
+  @media print { .controls, #ctl { display: none } body { margin: 0 } .paper { box-shadow: none } }
+</style></head><body>
+<h1>曲谱渲染器</h1>
+<div class="controls">
+  <button onclick="rerender()">⟳ 重绘</button><button onclick="playScore()">▶ 播放曲谱</button><button onclick="stopScore()">⏹ 停止</button>
+  <button onclick="window.print()">🖨 打印 / 存 PDF</button>
+</div>
+<div id="ctl"></div>
+<div class="paper"><div id="score"></div></div>
+<div class="meta" id="meta"></div>
+<script src="abcjs-basic.js"></script>
+<script>
+const ABC_TEXT = "X:1\r\nT:\r\nM:4/4\r\nL:1/16\r\nQ:1/4=70\r\nV: Vocal clef=treble name=\"Vocal Melody\" snm=\"Vocal\"\r\nV: Ins clef=treble name=\"Ins Melody\" snm=\"Inst.\"\r\nK:D#m\r\n%%barNumbers 1\n% intro\r\nV: Vocal\r\nZ|\"D#m\"z16|\"D#m\"z16|\"Bmaj7\"z16|\r\nV: Ins\r\nZ|z4A2c2c2A2A2G2|A4z12|z4A2c2c2A2A2G2|\r\nV: Vocal\r\n\"Bmaj7\"z16|\"D#m\"z16|\"D#m\"z16|\"Bmaj7\"z16|\r\nV: Ins\r\nA8z8|z2dAAAGGGAAFFGGA|z2dAAAGGGAAFFEEF|z2dAAAGGGAAFFGGA|\r\nV: Vocal\r\n\"C#\"z16|\r\nV: Ins\r\nG4z2F2E8|\r\n% verse\r\nV: Vocal\r\n\"D#m\"z2AAA2zDG2A2A2D2|\"D#m\"z12z2DD|\"Bmaj7\"A2z4AAA2G2Gc3|\"F#\"A4z8AAc2|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"D#m\"d2z8z2AGA2|\"Bmaj7\"D2z8zDDDA2|\"C#\"G2z6G2A2C2CD-|\"D#m\"D3z12z|\r\nV: Ins\r\nZ3|z3AAAGGGAAFFEEF|\r\nV: Vocal\r\n\"D#m\"z2AAAA2zAGG2G2CD-|\"D#m\"D2z8z2DDA2|\"Bmaj7\"A2z3AAAAAA2A2GA-|\"F#\"A2z8zAAAcA|\r\nV: Ins\r\nD2z12z2|Z3|\r\nV: Vocal\r\n\"D#m\"d4z8AGA2|\"Bmaj7\"D2z8zDDDA2|\"C#\"G4z4GGGAC2D2-|\"D#m\"D4z4zddddda2|\r\nV: Ins\r\nZ4|\r\n% chorus\r\nV: Vocal\r\n\"D#m\"d2z3ddda2d2a2d2|\"Bmaj7\"d2c2A2c2zddddda2|\"C#\"c2cAcAcAcAcAc2d2|\"D#m\"d8z8|\r\nV: Ins\r\nZ4|\r\n% verse\r\nV: Vocal\r\n\"D#m\"A2A2z4AGGG3F2|\"D#m\"A2D2z8z2DD|\"Bmaj7\"A2A2z4AGGFG2FA-|\"F#\"A3z8AA2AA|\r\nV: Ins\r\nZ|z4A2c2d4c2z2|Z2|\r\nV: Vocal\r\n\"D#m\"d2d2dccA2z2AAGGF|\"Bmaj7\"GFGFGFA2D2z4D2|\"C#\"A8zddddda2|\r\nV: Ins\r\nZ3|\r\n% chorus\r\nV: Vocal\r\n\"D#m\"d2z3ddda2d2a2d2|\"Bmaj7\"d2c2A2c2zddddda2|\"C#\"c2cAcAcAcAcAc2d2|\"D#m\"d8z8|\r\nV: Ins\r\nZ4|\r\n% verse\r\nV: Vocal\r\n\"D#m\"A2GA3D2A2z6|\"Bmaj7\"AGA2AGA2AGAGA2GF|\"C#\"G4z6GFGA3|\"D#m\"D4z6zDDDD2|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Bmaj7\"A2G2G4\"C#\"z2GFG2GF|\"D#m\"D4z12|\"D#m\"AGAAA2z2AGGGG2CD-|\"D#m\"D2z12z2|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Bmaj7\"AGAA2z3A2G2GFG2|\"F#\"A4z8AAAc-|\"D#m\"c2d4z4AAA2GF|\"Bmaj7\"GFD2z6zDDA3|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"C#\"G4z8CA,C2|\"D#m\"D8zddddda2|\r\nV: Ins\r\nZ2|\r\n% chorus\r\nV: Vocal\r\n\"D#m\"d2z3ddda2d2a2d2|\"Bmaj7\"d2c2A2c2zddddda2|\"C#\"c2cAcAcAcAcAc2d2|\"D#m\"d8z8|\r\nV: Ins\r\nZ4|\r\n% verse\r\nV: Vocal\r\n\"D#m\"AAAA3z4zDA2GA-|\"Bmaj7\"A2z12z2|\"C#\"GGFG2G2z3GFG2A2|\"D#m\"D2z8zDDDDD|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Bmaj7\"A2A2z6zDA2GA-|\"C#\"AG3z6GFGFGA|\"D#m\"D8zddddda2|\r\nV: Ins\r\nZ3|\r\n% chorus\r\nV: Vocal\r\n\"D#m\"d2z3ddda2d2a2d2|\"Bmaj7\"d2c2A2c2zddddda2|\"C#\"c2cAcAcAcAcAc2d2|\"D#m\"d8z8|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"D#m\"AAAAA2DDAAAAA2z2|\"Bmaj7\"AGGAG2z6G2GF|\"C#\"G16|\"D#m\"z8zddddda2|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"D#m\"d2z3ddda2d2a2d2|\"Bmaj7\"d2c2A2c2zddddda2|\"C#\"c2cAcAcAcAcAc2d2|\"D#m\"d8zddddda2|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"D#m\"d2z3ddda2d2a2d2|\"Bmaj7\"d2c2A2c2zddddda2|\"C#\"c2cAcAcAcAcAc2d2|\"D#m\"d8zddddda2|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"D#m\"d2z3ddda2d2a2d2|\"Bmaj7\"d2c2A2c2zddddda2|\"C#\"c2cAcAcAcAcAc2d2|\"D#m\"d8z8|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"D#m\"z16|\r\nV: Ins\r\nZ|";
+let visual = null;
+let visual0 = null;
+let synthCtl = null;
+let hlEls = []; // 当前高亮中的图层
+let hlMiss = 0; // 高亮未命中计数（诊断）
+
+function collectNotes() {
+  // 音符总数（用于元信息展示，不再参与定位）
+  return document.querySelectorAll("#score .abcjs-note").length;
+}
+function clearHighlight() {
+  hlEls.forEach(function (l) { try { if (l && l.classList) l.classList.remove("playing"); } catch (x) {} });
+  hlEls = [];
+}
+function highlightEvent(event) {
+  if (!event || !event.elements || !event.elements.length) return false;
+  clearHighlight();
+  var hit = 0;
+  // elements = 若干组，每组是一个数组，内含该音符的 SVG 元素（DOM 节点，有 classList）
+  event.elements.forEach(function (group) {
+    (Array.isArray(group) ? group : [group]).forEach(function (svgEl) {
+      if (svgEl && svgEl.classList) {
+        svgEl.classList.add("playing");
+        hlEls.push(svgEl);
+        hit++;
+      }
+    });
+  });
+  return hit > 0;
+}
+// 精确高亮：事件（由 abc 解析出的逐音符时序生成）自带该音符的绘制元素（layers），
+// 直接给它们的 SVG 元素加 playing 类上色——零索引猜测、长音/装饰音/多声部天然对齐。
+// 小节块高亮：当前小节（同系统三声部同列）所有音符保持亮，换小节/换行时整块切换
+let hlLine = -1;
+let hlMeasure = -1;
+const CURSOR = {
+  beatSubdivisions: 4,
+  onStart: clearHighlight,
+  onFinished: clearHighlight,
+  onBeat: function () {},
+  onEvent: function (evt) {
+    if (!evt) { clearHighlight(); return; } // null = 播放结束
+    var mv = typeof evt.measureNumber === "number" ? evt.measureNumber : -1;
+    var lv = typeof evt.line === "number" ? evt.line : -1;
+    if (mv !== hlMeasure || lv !== hlLine) {
+      clearHighlight();
+      hlMeasure = mv;
+      hlLine = lv;
+    }
+    var ok = highlightEvent(evt);
+    if (!ok && hlMiss++ < 3) {
+      var m = document.getElementById("meta");
+      if (m) m.textContent = ("诊断: 事件元素数=" + (evt.elements ? evt.elements.length : 0) + "，未找到可用 SVG 引用（高亮未生效）");
+    }
+  },
+  onLineEnd: function () {}
+};
+
+function fixSvg() {
+  // abcjs 为多声部每行生成一个 svg（内含两条五线谱），其 viewBox 高度未覆盖全部内容，
+  // 长谱会裁掉末尾的 Ins 声部。用 getBBox() 实测内容包围盒、按真实内容重设 viewBox，
+  // 再让高度由 viewBox 比例决定，保证整行完整显示。
+  Array.prototype.forEach.call(document.querySelectorAll("#score svg"), function (svg) {
+    var bb = null;
+    try { bb = svg.getBBox(); } catch (e) {}
+    if (bb && bb.width > 0 && bb.height > 0) {
+      svg.setAttribute("viewBox", [bb.x, bb.y, bb.width, bb.height].join(" "));
+    }
+    svg.setAttribute("preserveAspectRatio", "xMidYMin meet");
+    svg.removeAttribute("style");
+    svg.setAttribute("width", "100%");
+    svg.removeAttribute("height");
+    svg.style.display = "block";
+  });
+}
+function rerender() {
+  const el = document.getElementById("score");
+  el.innerHTML = "";
+  visual = ABCJS.renderAbc("score", ABC_TEXT, { add_classes: true, responsive: "resize", scale: 0.95, print: true });
+  visual0 = visual && visual[0];
+  fixSvg();
+  const nCount = collectNotes();
+  const mt = (visual0 && visual0.metaText) || {};
+  const shown = (mt.title ? mt.title + "  ·  " : "") + (visual0 ? visual0.lines.length + " 行" : "?") + " · 调号 " + (mt.key || "?") + " · 速度 " + (mt.tempo || "?") + " · 音符 " + nCount;
+  document.getElementById("meta").textContent = shown || "曲谱已渲染";
+}
+
+function getSynth() {
+  if (!synthCtl) {
+    synthCtl = new ABCJS.synth.SynthController();
+    synthCtl.load("#ctl", CURSOR, { displayPlay: true, displayProgress: true, displayRestart: true, displayLoop: false, displayWarp: false });
+  }
+  return synthCtl;
+}
+function playScore() {
+  try {
+    if (!visual0) rerender();
+    stopScore();
+    const ctl = getSynth();
+    ctl.setTune(visual0).then(function () { ctl.play(); }).catch(function (e) { alert("播放失败: " + (e && e.message ? e.message : e)); });
+  } catch (e) { alert("播放失败: " + e.message); }
+}
+function stopScore() {
+  try { if (synthCtl) synthCtl.pause(); } catch (e) {}
+  clearHighlight();
+}
+renderReady();
+function renderReady() { rerender(); }
+</script></body></html>

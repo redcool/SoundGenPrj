@@ -1,0 +1,12 @@
+# 《迁殷》· 风格建议（style）—— 双风格变体
+
+> 基调：盘庚（中兴·迁都·果决）→ 敬·燃 / 坚定·苍茫；两卡拉开。
+
+## 配器卡 A（v1a · seed 832501）—— 史诗颂歌摇滚（誓师）
+- 基座：摇滚（96 BPM） | 混搭：颂歌 + epic | 主奏：铜锣 + 大鼓 + 管弦 | 副奏：合唱 | 节奏：重鼓 + 铜锣开场 | 嗓音：庄重男中音 + 齐唱 | 情绪：敬·燃
+## 配器卡 B（v1b · seed 832502）—— 迁徙民谣摇滚
+- 基座：folk rock（88 BPM） | 混搭：迁徙/行进 | 主奏：木吉他 + 竹笛 | 副奏：— | 节奏：稳步鼓 + 手铃 | 嗓音：果决男声（风尘感） | 情绪：坚定·苍茫
+
+## 引擎 style
+- v1a: epic ceremonial rock march, bronze gong and heavy drums, solemn baritone with choir, resolve and authority of a king moving his people, 96 bpm, Mandarin Chinese vocals
+- v1b: migration folk rock, acoustic guitar and bamboo flute, resolute weathered male voice, steady walking rhythm, dust-and-river imagery, 88 bpm, Mandarin Chinese vocals

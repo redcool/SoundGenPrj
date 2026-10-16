@@ -1,0 +1,12 @@
+# 《复兴》· 风格建议（style）—— 双风格变体
+
+> 基调：武丁（中兴·不言则已）→ 燃·战 / 庄严·史诗；两卡拉开。
+
+## 配器卡 A（v1a · seed 832601）—— 战歌力量金属
+- 基座：力量金属（128 BPM） | 混搭：战歌 | 主奏：失真电吉他 + 战鼓 | 副奏：铜管/齐唱 | 节奏：重鼓 + 号角 | 嗓音：高亢男声 + 作战齐唱 | 情绪：燃·战（伐鬼方三年克之）
+## 配器卡 B（v1b · seed 832602）—— 宫廷史诗摇滚
+- 基座：史诗摇滚（96 BPM） | 混搭：宫廷/颂歌 | 主奏：编钟 + 管弦 | 副奏：合唱 | 节奏：仪式鼓 | 嗓音：庄重男中音（梦中访贤） | 情绪：庄严·史诗
+
+## 引擎 style
+- v1a: power metal war anthem, heavy distorted guitar and war drums, soaring male lead with battle chants, horns and choir, 128 bpm, fierce triumphant energy of the son-of-Heaven king, Mandarin Chinese vocals
+- v1b: ceremonial epic rock, bronze bells and orchestral strings, solemn baritone telling a dream of finding a sage, ritual drums, 96 bpm, dignified revival mood, Mandarin Chinese vocals

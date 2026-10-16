@@ -1,0 +1,9 @@
+# 《去国》· 叙档风格（style）—— 双风格变体
+> 叙词 ~1016 字。基调：微子（存祀·悲壮）→ 悲·壮 / 史诗·苍。
+## 叙卡 A（n1a · seed 833601）—— 悲情史诗叙事
+- 基座：史诗叙事摇滚（90 BPM） | 主奏：大提琴 + 管弦 | 节奏：行军鼓渐弱 | 嗓音：低沉男声叙唱 + 念白 | 华彩：器乐间奏 | 情绪：悲·壮
+## 叙卡 B（n1b · seed 833602）—— 离乡说书长叙
+- 基座：民谣叙事（78 BPM） | 主奏：木吉他 + 二胡 | 节奏：轻鼓 | 嗓音：沙哑说书男声 + 大段念白 | 情绪：史诗·苍
+## 引擎
+- n1a: elegiac epic narrative rock, cello and orchestra, low male narrating and singing with spoken sections, fading march drums, instrumental interlude, 90 bpm, 6 minutes, Mandarin Chinese vocals
+- n1b: long-form exile folk narration, acoustic guitar and erhu, hoarse storyteller male voice with spoken sections, gentle drums, 78 bpm, 6 minutes, Mandarin Chinese vocals

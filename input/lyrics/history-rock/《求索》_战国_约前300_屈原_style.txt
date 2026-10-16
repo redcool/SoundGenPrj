@@ -1,0 +1,15 @@
+# 《求索》· 风格建议（style）—— 楚辞风样板（4 卡：短2 + 叙2）
+> 基调：屈原（楚辞之祖·求索）→ 悲·清 / 旷·烈；严格执行楚辞启示录（兮式拖腔、乱曰收尾、意象锤）。
+## 短卡 A（v1a · seed 834101）—— 楚风吟诵摇滚
+- 基座：史诗摇滚（92 BPM） | 主奏：编钟 + 瑟（古筝近色） | 副奏：低吟齐唱 | 节奏：疏鼓 | 嗓音：**吟诵式男中音（兮式拖腔）** | 收尾：乱曰爆发 | 情绪：悲·清
+## 短卡 B（v1b · seed 834102）—— 江船民歌摇滚
+- 基座：民歌摇滚（84 BPM） | 主奏：竹笛 + 瑟 | 节奏：摇橹律动 | 嗓音：苍凉男声（行吟泽畔） | 收尾：乱曰 | 情绪：旷·烈
+## 叙卡 A（n1a · seed 834103）—— 楚辞吟诵长叙
+- 基座：史诗叙事（88 BPM） | 主奏：编钟 + 管弦 + 瑟 | 副奏：齐唱 | 节奏：仪式鼓 | 嗓音：**吟诵男声 + 大段念白（乱曰收尾）** | 华彩：器乐间奏 | 情绪：悲·烈
+## 叙卡 B（n1b · seed 834104）—— 说书长叙（渔父对答）
+- 基座：民谣叙事（78 BPM） | 主奏：竹笛 + 古琴 | 节奏：轻鼓 | 嗓音：**说书男声（渔父对话段用双声）** | 收尾：念白乱曰 | 情绪：旷·清醒
+## 引擎
+- v1a: elegant Chu-style rock, bronze bells and se zither, reciting male voice with drawn-out vowels, sparse drums, 92 bpm, sorrowful clarity, Mandarin Chinese vocals
+- v1b: folk-rock river lament, bamboo flute and se zither, weathered wandering male voice, oar-row rhythm, 84 bpm, bleak and fierce, Mandarin Chinese vocals
+- n1a: long-form Chu-sao recital epic, bronze bells orchestra and se zither, reciting male voice with heavy spoken sections and final surge, instrumental interlude, 88 bpm, 6-7 minutes, Mandarin Chinese vocals
+- n1b: long-form storytelling with fisherman dialogue, bamboo flute and guqin, storyteller male voice with dual-voice dialogue section, 78 bpm, 6-7 minutes, Mandarin Chinese vocals

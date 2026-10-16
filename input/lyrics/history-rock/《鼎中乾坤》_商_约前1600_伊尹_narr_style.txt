@@ -1,0 +1,9 @@
+# 《鼎中乾坤》· 叙档风格（style）—— 双风格变体
+> 叙词 ~1030 字（念白×2 + 章节×7 + 华彩 + 主题句回环）。基调：伊尹（谋·智·相）→ 智·律 / 温·哲。
+## 叙卡 A（n1a · seed 832903）—— 智谋叙事律动
+- 基座：techno-art（98 BPM） | 主奏：synth 琶音 + 古筝（色） | 副奏：合成贝斯 | 节奏：鼓机 | 嗓音：冷声叙唱 + 念白 | 情绪：智·律
+## 叙卡 B（n1b · seed 832904）—— 说书温叙
+- 基座：民谣叙事（78 BPM） | 主奏：木吉他 + 陶笛 | 节奏：轻鼓 | 嗓音：温厚说书男声 + 念白 | 情绪：温·哲
+## 引擎
+- n1a: intelligent narrative techno art-rock, synth arpeggios and guzheng color, cold clear male narrating and singing with spoken sections, drum machine, 98 bpm, 6 minutes, Mandarin Chinese vocals
+- n1b: warm long-form folk narration, acoustic guitar and ocarina, warm storyteller male voice with spoken sections, gentle drums, 78 bpm, 6 minutes, Mandarin Chinese vocals

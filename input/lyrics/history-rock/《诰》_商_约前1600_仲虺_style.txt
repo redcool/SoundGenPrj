@@ -1,0 +1,9 @@
+# 《诰》· 风格建议（style）—— 双风格变体
+> 基调：仲虺（开国左相·诰文）→ 庄·律 / 智·机；两卡拉开。
+## 卡 A（v1a · seed 833001）—— 律动史诗摇滚
+- 基座：史诗摇滚（100 BPM） | 主奏：鼓 + 贝斯 + 铜管 | 节奏：进行鼓 | 嗓音：**庄重男中音（立诰）** | 情绪：庄·律
+## 卡 B（v1b · seed 833002）—— 智谋 techno-art
+- 基座：art rock（110 BPM） | 主奏：synth 琶音 + 合成贝斯 | 节奏：鼓机 | 嗓音：**冷声（机锋）** | 情绪：智·机
+## 引擎
+- v1a: solemn rhythmic epic rock, drums and bass with brass, dignified baritone reciting a founding edict, 100 bpm, Mandarin Chinese vocals
+- v1b: clever techno art-rock, synth arpeggios and synth bass with drum machine, cold witty male voice, 110 bpm, Mandarin Chinese vocals

@@ -1,0 +1,9 @@
+# 《披甲而战》· 叙档风格（style）—— 双风格变体
+> 叙词 ~1010 字（念白×2 + 章节×7 + 华彩 + 主题句回环）。基调：妇好（女统帅·战+祭）→ 燃·悲壮 / 史诗·巾帼。
+## 叙卡 A（n1a · seed 833401）—— 战歌史诗叙事（女声）
+- 基座：战鼓摇滚（108 BPM） | 主奏：电吉他 + 战鼓 | 副奏：合唱 | 节奏：重鼓 | 嗓音：**清亮女声叙唱 + 念白** | 华彩：器乐间奏 | 情绪：燃·悲壮
+## 叙卡 B（n1b · seed 833402）—— 巾帼说书长叙
+- 基座：史诗/民谣叙事（82 BPM） | 主奏：竹笛 + 管弦 | 节奏：行军鼓渐弱 | 嗓音：女声 + 说书念白 | 情绪：史诗·巾帼
+## 引擎
+- n1a: epic war-drum narrative rock, electric guitar and war drums, bright female lead narrating and singing with spoken sections, battle choir, instrumental interlude, 108 bpm, 6 minutes, Mandarin Chinese vocals
+- n1b: long-form heroine folk-epic narration, bamboo flute and orchestra, female storyteller voice with spoken sections, fading march drums, 82 bpm, 6 minutes, Mandarin Chinese vocals

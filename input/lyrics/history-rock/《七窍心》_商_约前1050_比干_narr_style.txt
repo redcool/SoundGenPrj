@@ -1,0 +1,9 @@
+# 《七窍心》· 叙档风格（style）—— 双风格变体
+> 叙词 ~1012 字（念白×2 + 章节×7 + 华彩 + 主题句回环）。基调：比干（谏臣·殉道）→ 悲·壮 / 孤·勇。
+## 叙卡 A（n1a · seed 833501）—— 悲情硬摇叙事
+- 基座：悲情硬摇滚（96 BPM） | 主奏：慢失真吉他 + 大提琴 | 节奏：沉重鼓 | 嗓音：含悲男声叙唱 + 念白 | 华彩：器乐间奏 | 情绪：悲·壮
+## 叙卡 B（n1b · seed 833502）—— 吟诵说书长叙
+- 基座：民谣叙事（76 BPM） | 主奏：二胡 + 竹笛 | 节奏：疏鼓 | 嗓音：低沉吟诵男声 + 大段念白 | 情绪：孤·勇
+## 引擎
+- n1a: tragic hard-rock narrative, slow distorted guitar and cello, grieving male narrating and singing with spoken sections, heavy drums, instrumental interlude, 96 bpm, 6 minutes, Mandarin Chinese vocals
+- n1b: long-form elegiac narration, erhu and bamboo flute, low reciting male voice with spoken sections, sparse drums, 76 bpm, 6 minutes, Mandarin Chinese vocals

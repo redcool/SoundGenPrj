@@ -1,0 +1,23 @@
+# 《七窍心》· 风格建议（style）
+
+> 曲风矩阵：比干（谏臣·以死殉道）→ **悲情硬摇滚**（慢失真、人声独白、贝斯走低）。
+> 基调：历史摇滚（悲歌分支）—— 慢失真吉他 × 走低贝斯 × 含悲人声，副歌迸发。
+
+## 1. YuE2（本地）
+--style：
+```
+tragic hard rock ballad, mid-tempo distorted guitar with slow bends, deep bass walk-down, heroic male vocal with restrained grief bursting into anthemic chorus, funereal war drums, dark bronze atmosphere, simple singable chorus, Mandarin Chinese vocals
+```
+参数：歌词驱动、planning full、guidance 1.0、seed 固定、max_duration 340、中文发声、词长 560+。
+
+## 2. Music3 caption
+Global Metadata:
+genre: 历史摇滚 / 悲情硬摇滚 (Chinese tragic hard rock ballad)
+mood: 悲壮、孤勇、决绝 (tragic, defiant, resolute)
+bpm: 104, 4/4, duration: ~5:00, language: Mandarin
+instruments: distorted guitar (slow bends), deep bass, drums, low choir
+Vocal: heroic male lead, restrained grief verses, bursting anthemic chorus, spoken bridge
+Arrangement: lone guitar intro → verse1 → verse2 → chorus → verse3 → bridge (voice+drums only) → verse4 → final chorus (big, cut to silence)
+
+## 3. suno 一行
+Chinese tragic hard rock ballad, slow distorted guitar, deep bass, heroic grieving male vocals, anthemic chorus, 5 minutes, Mandarin

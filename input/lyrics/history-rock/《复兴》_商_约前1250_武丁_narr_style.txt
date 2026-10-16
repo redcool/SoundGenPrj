@@ -1,0 +1,9 @@
+# 《复兴》· 叙档风格（style）—— 双风格变体
+> 叙词 ~1013 字（念白×2 + 章节×7 + 华彩 + 主题句回环）。基调：武丁（中兴·不言则已）→ 燃·战 / 庄严·史诗。
+## 叙卡 A（n1a · seed 833201）—— 中兴史诗战歌叙事
+- 基座：力量金属叙事（112 BPM） | 主奏：失真吉他 + 战鼓 | 副奏：铜管/齐唱 | 节奏：重鼓 | 嗓音：高亢男声叙唱 + 念白 | 华彩：器乐间奏 | 情绪：燃·战
+## 叙卡 B（n1b · seed 833202）—— 宫廷说书长叙
+- 基座：史诗/宫廷（84 BPM） | 主奏：编钟 + 管弦 | 节奏：仪式鼓 | 嗓音：庄严男中音 + 大段念白 | 情绪：庄严·史诗
+## 引擎
+- n1a: epic power-metal narrative, heavy distorted guitar and war drums, soaring male narrating and singing with spoken sections, instrumental interlude, 112 bpm, 6 minutes, Mandarin Chinese vocals
+- n1b: ceremonial court narrative, bronze bells and orchestral strings, dignified baritone with spoken sections, ritual drums, 84 bpm, 6 minutes, Mandarin Chinese vocals

@@ -1,0 +1,9 @@
+# 《雊雉》· 叙档风格（style）—— 双风格变体
+> 叙词 ~865 字。基调：祖己（谏臣·哲思）→ 静·哲 / 冷·峻。
+## 叙卡 A（n1a · seed 833701）—— 哲思叙事摇滚
+- 基座：叙事摇滚（92 BPM） | 主奏：钢琴 + 弦乐 + 磬 | 节奏：轻鼓 | 嗓音：温和男声叙唱 + 念白 | 情绪：静·哲
+## 叙卡 B（n1b · seed 833702）—— 吟诵说书长叙
+- 基座：民谣叙事（80 BPM） | 主奏：木吉他 + 竹笛 | 节奏：疏铃 | 嗓音：说书男声 + 大段念白 | 情绪：冷·峻
+## 引擎
+- n1a: philosophical narrative rock, piano strings and chime stone, gentle male narrating and singing with spoken sections, light drums, 92 bpm, 6 minutes, Mandarin Chinese vocals
+- n1b: long-form moral narration, acoustic guitar and bamboo flute, storyteller male voice with spoken sections, sparse bells, 80 bpm, 6 minutes, Mandarin Chinese vocals

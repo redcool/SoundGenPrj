@@ -1,0 +1,70 @@
+# 《披甲而战》· 风格建议（style）
+
+> 用途：同一首歌喂给不同生成器。每条都是"建议直接用"的现成文本，可按喜好微调。
+> 基调：历史摇滚（侠风）·战鼓摇滚 —— 战鼓 × 电吉他 × 中文人声，副歌要能跟着吼。
+> 词内 [] 已内置乐器+情绪指示（如 [Chorus · 全线爆发，齐唱 · 战鼓+电吉他+贝斯]）：YuE2 直用整段词；suno 认 [] 段落结构。
+
+---
+
+## 1. YuE2（本地 ComfyUI · FL-YuE2，歌词驱动）
+
+--style 建议（英文，直接贴给 generate.py）：
+
+```
+Epic Chinese historical rock anthem with wuxia flavor, war drums and heavy distorted electric guitar, powerful female lead vocal in Mandarin, driving 4/4 at 140 BPM, low narrative verses, anthemic shouting chorus, punchy bass, thundering taiko-like war drums, subtle ancient Chinese pentatonic color, dark bronze-and-fire epic atmosphere, catchy simple melody, clean vocal articulation
+```
+
+参数建议：歌词驱动（不带谱面）、guidance 1.01、acoustic_steps 32、seed 固定、max_duration 240（≈3:45 词量）、中文发声。
+注意：嘶吼降级为清嗓/半嘶吼，保证"登妇好三千，登旅万"咬字清楚。
+
+---
+
+## 2. Music3（本地 ComfyUI 节点，结构化 caption）
+
+caption 建议（按 Global Metadata / Vocal Details / Arrangement 三段结构）：
+
+```
+Global Metadata:
+genre: 历史摇滚·侠风 / 战鼓摇滚 (Chinese historical rock with wuxia flavor, war-drum rock)
+mood: 史诗、燃、悲壮 (epic, fiery, solemn)
+bpm: 140, time signature: 4/4, duration: ~3:30
+language: Mandarin (中文发声)
+instruments: 战鼓、电吉他、贝斯、副歌人声齐唱
+Vocal Details:
+lead vocal: 女声，清晰有力，主歌低沉叙事、副歌高亢齐唱
+backing: 副歌加打击乐式呐喊（无嘶吼）
+Arrangement:
+intro（战鼓滚奏+吉他渐入）→ verse1（鼓+吉他底）→ verse2 → chorus（全乐队+齐唱爆发）→ verse3 → chorus → bridge（只留鼓+人声，放缓）→ final chorus（双倍气势收尾）
+```
+
+（Music3 中文咬字很好，可放心唱整段 hook。）
+
+---
+
+## 3. step audio / suno（外网侧）
+
+style 栏直接填（一行，≤200 字符）：
+
+```
+epic Chinese historical rock (wuxia flavor), war drums, electric guitar, bass, powerful female Mandarin vocal, anthemic shouting chorus, dark bronze fire atmosphere, simple catchy melody, 3-4 minutes
+```
+
+suno 小贴士：词里 `[verse1] [chorus] [bridge]` 结构它原生认；中文歌词直贴即可；若想要"带古风味"可再加 `erhu or dizi accent`，想要更"鼓"就加 `taiko drums`。
+
+---
+
+## 4. 人耳参考（写给你的试听预期，不是喂给模型的）
+
+- 侠气参考：《沧海一声笑》的洒脱 × 现代摇滚编曲
+- 燃点设计：副歌"披甲而战"四连吼，鼓要砸在胸口
+- 悲壮点：bridge"王占曰，妇好龋"那句放慢、只留鼓点和人声，再进 final chorus 爆发
+- 这张图的气质：青铜 + 甲骨 + 燎祭烟火（封面已经定了这个调性）
+
+---
+
+## 生成参数备忘
+| 引擎 | 关键参数 | 时长 |
+|---|---|---|
+| YuE2 | guidance 1.01 · 固定 seed · 无谱面歌词驱动 | ~240s |
+| Music3 | probe 抽卡(4×60s) → 同 seed 定稿 300s | ~300s |
+| step audio / suno | style 一行直贴 | 歌词定 |

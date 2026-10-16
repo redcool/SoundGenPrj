@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8"><title>曲谱渲染器</title>
+<link rel="stylesheet" href="abcjs-audio.css">
+<style>
+  body { font-family: "Microsoft YaHei", sans-serif; margin: 2rem; max-width: 1100px; margin-inline: auto; }
+  h1 { font-size: 1.3rem; }
+  .controls { margin: 0.8rem 0; display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; }
+  button { padding: 0.4rem 1rem; cursor: pointer; }
+  .paper { background: #fff; padding: 1.2rem; box-shadow: 0 1px 6px rgba(0,0,0,.25); }
+  #score svg { display: block; margin-inline: auto; }
+  #score svg { height: auto !important; max-width: 100% !important; }
+  .meta { color: #555; font-size: .85rem; margin-top: .8rem; white-space: pre-wrap; font-family: Consolas, monospace; }
+  @page { margin: 1cm; }
+  @media print {
+    .controls, #ctl, .meta { display: none !important; }
+    body { margin: 0; }
+    .paper { box-shadow: none; padding: 0; }
+    #score svg { width: 100% !important; height: auto !important; max-width: 100% !important; page-break-inside: avoid; break-inside: avoid; }
+    html, body, .paper, #score { overflow: visible !important; height: auto !important; }
+  }
+  /* 播放时音符高亮：事件携带的 SVG 元素加 .playing */
+  .playing, .playing * { fill: #ff6b35 !important; }
+  .playing, .playing g, .playing path { filter: drop-shadow(0 0 2px rgba(255,107,53,.9)); }
+  #ctl { margin: .6rem 0; }
+  #ctl .abcjs-midi-progress-background, #ctl .abcjs-midi-progress-indicator { background: #bbb; }
+  @media print { .controls, #ctl { display: none } body { margin: 0 } .paper { box-shadow: none } }
+</style></head><body>
+<h1>曲谱渲染器</h1>
+<div class="controls">
+  <button onclick="rerender()">⟳ 重绘</button><button onclick="playScore()">▶ 播放曲谱</button><button onclick="stopScore()">⏹ 停止</button>
+  <button onclick="window.print()">🖨 打印 / 存 PDF</button>
+</div>
+<div id="ctl"></div>
+<div class="paper"><div id="score"></div></div>
+<div class="meta" id="meta"></div>
+<script src="abcjs-basic.js"></script>
+<script>
+const ABC_TEXT = "X:1\r\nT:\r\nM:4/4\r\nL:1/32\r\nQ:1/4=97\r\nV: Vocal clef=treble name=\"Vocal Melody\" snm=\"Vocal\"\r\nV: Ins clef=treble name=\"Ins Melody\" snm=\"Inst.\"\r\nK:Em\r\n%%barNumbers 1\n% intro\r\nV: Vocal\r\nZ|\"Em\"z32|\"Em\"z32|\"Em\"z32|\r\nV: Ins\r\nZ|E,2B,2E2F2G2B2e2f2g4f4d4A4|E,2B,2E2F2G2B2e2f2g4a4f4d4|E,2B,2E2F2G2B2e2f2g4f4d4A4|\r\nV: Vocal\r\n\"Em\"z32|\"Em\"z32|\"Em\"z32|\"Em\"z32|\r\nV: Ins\r\nE,2B,2E2F2G2B2e2f2g4a4f4d4|e2e'2b2d'2a2b2g2a2f2g2d2e2B2d2A2B2|E,2B,2E2F2G2B2e2f2g4a4f4d4|e4B4B4A4A4G4G4F4|\r\nV: Vocal\r\n\"Em\"z32|\"Em\"z32|\"Em\"z32|\"Cmaj7\"z32|\r\nV: Ins\r\nE,2B,2E2F2G2B2e2f2g4a4f4d4|E,2B,2E2F2G2B2e2f2g4f4d4A4|E,2B,2E2F2G2B2e2f2g4a4f4d4|z4E2F2G2B2e2f2g4f4d4A4|\r\nV: Vocal\r\n\"Cmaj7\"z32|\"Am7\"z32|\"Am7\"z32|\"Bm\"z32|\r\nV: Ins\r\nE,2B,2E2F2G2B2e2f2g4a4f4d4|A,2B,2E2F2G2B2e2f2g4f4d4A4|A,2B,2E2F2G2B2e2f2g4a4f4d4|B,2D2E2F2G2B2e2f2g4f4d4A4|\r\nV: Vocal\r\n\"Bm\"z32|\"Em\"z32|\"Em\"z32|\"Em\"z32|\r\nV: Ins\r\nB,2D2E2F2G2B2e2f2g4a4f4d4|e'2e'2b2d'2a2b2g2a2f2g2d2e2B2d2A2B2|E,2B,2E2F2G2B2e2f2g4a4f4d4|e'4b4b4a4a4g4g4f4|\r\nV: Vocal\r\n\"Em\"z32|\r\nV: Ins\r\nf4e4e4d4d4B4B4A4|\r\n% verse\r\nV: Vocal\r\n\"Em\"z4B,4B,4B,4B,4B,4z8|\"Em\"A,4G,4A,2B,6B,8z8|\"C\"z4B,2B,2B,4B,2B,2A,4G,4z8|\"C\"A,4G,2G,2A,2A,4G,2A,4G,4z8|\r\nV: Ins\r\nE2z24z6|Z3|\r\nV: Vocal\r\n\"Am\"z4A,2G,2A,4z4A,2G,2A,4z8|\"Am\"z4A,2G,2A,2A,4G,2B,4A,4z4B,2B,2|\"B\"B,4B,2B,2B,4z16z4|\"B\"z2E,2E,2E,2E,4D,4E,4z8B,2B,2|\r\nV: Ins\r\nZ2|z16b2d'2a2b2g2a2f2g2|e2z24z6|\r\nV: Vocal\r\n\"Em\"B,4B,4B,4B,4D4E12|\"Em\"z16G8F8|\"Em\"E8z24|\"Em\"z32|\r\nV: Ins\r\nZ|e'2e'2b2d'2a2b2g2a2z16|z8a2b2g2a2f2g2d2e2B2d2A2B2|E,2B,2E2F2G2B2e2f2g4a4f4d4|\r\nV: Vocal\r\n\"Em\"E,4B,4A,4B,4z4B,4B,4A,4|\"Em\"B,6B,2B,4A,2G,2A,4B,4B,4z4|\"Cmaj7\"E,4B,4A,4B,8z12|\"Cmaj7\"z4E,2E,2E,4B,4B,8z8|\r\nV: Ins\r\nZ2|z16z4f2e2d4A4|B4z16z4f2e2d2e2|\r\nV: Vocal\r\n\"Am\"A,4A,4A,4A,2G,2A,4A,2G,2A,4E,4|\"Am\"A,2A,2A,2G,2A,4A,2G,2A,4G,4B,4E,4|\"B\"B,2B,2B,2B,2B,4B,2B,2D4B,4B,2B,2D4|\"B\"B,8z16z4B2B2|\r\nV: Ins\r\nZ3|z8G2B2e2f2g4a4f4z4|\r\nV: Vocal\r\n\"Em\"B4E4E4D4E8z8|\"Em\"z4E2E2E4E2E2G4E4E2E2D4|\"Cmaj7\"D6E8z16z2|\"Cmaj7\"z32|\r\nV: Ins\r\nZ2|z16g2b2f2e2d4A4|B32|\r\n% chorus\r\nV: Vocal\r\n\"Em\"E4B4A4B4A4B4A4B4|\"Em\"A4B4E4B4A4G4B4z4|\"Cmaj7\"E4B4A4B4A4B2B2A8|\"Cmaj7\"A4G2A6G4A4G4F8|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Em\"E8z24|\"Em\"z32|\r\nV: Ins\r\nz8a2b2g2a2f2g2d2e2B2d2A2B2|E2B,2E2F2G2B2e2f2g4a4f4d4|\r\n% verse\r\nV: Vocal\r\n\"Em\"E,4E,4B,4z4E,4E,4B,4z4|\"Em\"E,4E,4B,4z4A,2A,4G,2A,4G,4|\"Cmaj7\"E,2E,2E,2E,2B,4z16z4|\"Cmaj7\"z32|\r\nV: Ins\r\nZ2|z16g2b2f2e2d4A4|B32|\r\nV: Vocal\r\n\"Am\"A,2A,2B,4A,4z4A,2A,2B,4A,4z4|\"Am\"A,2A,2B,4A,4z4A,4B,4D8|\"B\"B,8z24|\"B\"z32|\r\nV: Ins\r\nZ2|z16b2d'2a2b2g2a2f2g2|e2f2d2e2B2d2A2B2G2A2F2G2E2F2D2E2|\r\nV: Vocal\r\n\"Em\"E,4B,4z6E,2E,4B,4A,4G,4|\"Em\"A,4G,4A,4B,4A,8G,8|\"Em\"z32|\"Em\"z32|\r\nV: Ins\r\nZ2|e'2e'2b2d'2a2b2g2a2f2g2d2e2B2d2A2B2|E,2B,2E2F2G2B2e2f2g4a4f4d4|\r\nV: Vocal\r\n\"Em\"B4B4E8E4D4E8|\"Em\"z4B4A4B4A4G4E8|\"Cmaj7\"E4B8E4E4D4D8|\"Cmaj7\"E8E6D2G8E8|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Am\"A4E4A6G2A2G2A2G2A8|\"Am\"z2G2A2G2A2G2A4B8E8|\"B\"B,4B,4B,8B,4B,4D4B,4-|\"B\"B,16-B,4z12|\r\nV: Ins\r\nZ3|z16z4a4f4d4|\r\nV: Vocal\r\n\"Em\"z32|\"Em\"z32|\"Cmaj7\"z32|\"Cmaj7\"z32|\r\nV: Ins\r\ne8z24|Z|E8z24|Z|\r\nV: Vocal\r\n\"Am\"z32|\"Am\"z32|\"Bm\"z32|\"Bm\"z32|\r\nV: Ins\r\nA8z24|Z|F8z24|Z|\r\nV: Vocal\r\n\"Bm\"z32|\r\nV: Ins\r\nZ|\r\n% chorus\r\nV: Vocal\r\n\"Em\"E4B4A4B4A4B4A4B4|\"Em\"A4B2B2A2B2B4A4A2G2E4z4|\"Cmaj7\"E4B4A4B4A4B2B2A4A2G2|\"Cmaj7\"A4G4A4A2G2A4B4G4E4|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Am\"z32|\"Am\"z32|\r\nV: Ins\r\ne'2e'2b2d'2a2b2g2a2f2g2d2e2B2d2A2B2|E,2B,2E2F2G2B2e2f2g4a4f4d4|\r\n% verse\r\nV: Vocal\r\n\"Em\"E,4E,4B,4B,2A,2B,4B,4z8|\"Em\"z6E,2E,4E,4G,4E,4z8|\"Cmaj7\"z6E,2E,4E,4G,4E,4z4E,2E,2|\"Cmaj7\"G,8G,4G,4A,8B,8|\r\nV: Ins\r\nZ|z24f2e2d2e2|Z2|\r\nV: Vocal\r\n\"Am\"z2A,2A,2A,2A,2A,2A,4A,4A,2G,2A,4A,2G,2|\"Am\"A,4A,2G,2A,8A,4G,4B,4B,4|\"Bm\"B,2B,2B,4B,4B,2B,2D4D4D4B,4|\"Bm\"B,2B,2B,2B,2D2B,2D2B,2D2B,2D2B,2D4E4|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Em\"E8z24|\"Em\"z32|\"Cmaj7\"E4E4E4D4E8z8|\"Cmaj7\"z8E4E4G4A4B8|\r\nV: Ins\r\nz8a2b2g2a2f2g2d2e2B2d2A2B2|E,2B,2E2F2G2B2e2f2g4a4f4d4|Z2|\r\nV: Vocal\r\n\"Am\"B4E4E4D4E4D4E8|\"Am\"z8B4E4G8A8|\"Bm\"A4A4A4G4A4A2G2A8|\"Bm\"z4A2G2A6G2A4G4A8|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Bm\"B16z16|\"Bm\"z32|\r\nV: Ins\r\nZ2|\r\n% chorus\r\nV: Vocal\r\n\"Em\"E4B4A4B4A4B4A4B4|\"Em\"A4B4E4B4A4G4B4z4|\"Cmaj7\"E4B4A4B4A4B2B2A8|\"Cmaj7\"A4G2A6G4A4G4F8|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Am\"E8z24|\"Am\"z32|\"Em\"E,4B,4A,4B,4A,4B,4A,4B,4|\"Em\"A,4B,4E,4B,4A,4G,4B,8|\r\nV: Ins\r\nz8a2b2g2a2f2g2d2e2B2d2A2B2|E,2B,2E2F2G2B2e2f2g4a4f4d4|Z2|\r\nV: Vocal\r\n\"Cmaj7\"E,4B,4A,4B,4A,4B,2B,2A,8|\"Cmaj7\"A,4G,4A,4G,4A,4G,4F,8|\"Am\"E,8z24|\"Am\"z32|\r\nV: Ins\r\nZ2|z8a2b2g2a2f2g2d2e2B2d2A2B2|E,2B,2E2F2G2B2e2f2g4a4f4d4|\r\nV: Vocal\r\n\"Em\"E,4B,4A,4B,4A,4B,4A,4B,4|\"Em\"A,4B,4E,4B,4A,4G,4B,8|\"Cmaj7\"E,4B,4A,4B,4A,4B,2B,2A,8|\"Cmaj7\"A,4G,2A,6G,4A,4G,4F,8|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Am\"E,8z24|\"Am\"z32|\"Em\"E4B4A4B4A4B4A4B4|\"Em\"A4B4E4B4A4G4B8|\r\nV: Ins\r\nz8a2b2g2a2f2g2d2e2B2d2A2B2|E,2B,2E2F2G2B2e2f2g4a4f4d4|Z2|\r\nV: Vocal\r\n\"Cmaj7\"E4B4A4B4A4B2B2A8|\"Cmaj7\"A4G4A4G4A4G4F8|\"Am\"E8z24|\"Am\"z32|\r\nV: Ins\r\nZ2|z8a2b2g2a2f2g2d2e2B2d2A2B2|E,2B,2E2F2G2B2e2f2g4a4f4d4|\r\nV: Vocal\r\n\"Em\"E4B4A4B4A4B4A4B4|\"Em\"A4B4E4B4A4G4B8|\"Cmaj7\"E4B4A4B4A4B2B2A8|\"Cmaj7\"A4G4A4G4A4G4F8|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Am\"E8z24|\"Am\"z32|\"Em\"E,4B,4A,4B,4A,4B,4A,4B,4|\"Em\"A,4B,4E,4B,4A,4G,4B,8|\r\nV: Ins\r\nz8a2b2g2a2f2g2d2e2B2d2A2B2|E,2B,2E2F2G2B2e2f2g4a4f4d4|Z2|\r\nV: Vocal\r\n\"Cmaj7\"E,4B,4A,4B,4A,4B,2B,2A,8|\"Cmaj7\"A,4G,4A,4G,4A,4G,4F,8|\"Am\"E,8z24|\"Am\"z32|\r\nV: Ins\r\nZ2|z8a2b2g2a2f2g2d2e2B2d2A2B2|E,2B,2E2F2G2B2e2f2g4a4f4d4|\r\n% outro\r\nV: Vocal\r\n\"Em\"E,4B,4A,4B,4A,4B,4A,4B,4|\"Em\"A,4B,4E,4B,4A,4G,4B,8|\"Cmaj7\"E,4B,4A,4B,4A,4B,2B,2A,8|\"Cmaj7\"A,4G,4A,4G,4A,4G,4F,8|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Am7\"E,8z24|\"Am7\"z32|\"Em\"z32|\"Em\"z32|\r\nV: Ins\r\nz8G2B2e2f2g4f4d4A4|z2B,2E2F2G2B2e2f2g4a4f4d4|e'2e'2b2d'2a2b2g2a2f2g2d2e2B2d2A2B2|E,2B,2E2F2G2B2e2f2g4a4f4d4|\r\nV: Vocal\r\n\"Em\"z32|\"Em\"z32|\"Cmaj7\"z32|\"Cmaj7\"z32|\r\nV: Ins\r\ne'4b4b4a4a4g4g4f4|f4e4e4d4d4B4B4A4|e'4b4b4a4a4g4g4f4|f4e4e4d4d4B4B4A4|\r\nV: Vocal\r\n\"Am7\"z32|\"Am7\"z32|\"Em\"z32|\"Em\"z32|\r\nV: Ins\r\ne'2e'2b2d'2a2b2g2a2f2g2d2e2B2d2A2B2|E,2B,2E2F2G2B2e2f2g4a4f4d4|e'4b4b4a4a4g4g4f4|f4e4e4d4d4B4B4A4|\r\nV: Vocal\r\n\"Em\"z32|\"Em\"z32|\"Cmaj7\"z32|\"Cmaj7\"z32|\r\nV: Ins\r\ne'2e'2b2d'2a2b2g2a2f2g2d2e2B2d2A2B2|E,2B,2E2F2G2B2e2f2g4a4f4d4|e'4b4b4a4a4g4g4f4|f4e4e4d4d4B4B4A4|\r\nV: Vocal\r\n\"Am7\"z32|\"Am7\"z32|\"Em\"z32|\"Em\"z32|\r\nV: Ins\r\ne'2e'2b2d'2a2b2g2a2f2g2d2e2B2d2A2B2|E,2B,2E2F2G2B2e2f2g4a4f4d4|e'4b4b4a4a4g4g4f4|f4e4e4d4d4B4B4A4|\r\nV: Vocal\r\n\"Em\"z32|\"Em\"z32|\"Em\"z32|\"Em\"z32|\r\nV: Ins\r\ne'2e'2b2d'2a2b2g2a2f2g2d2e2B2d2A2B2|E,2B,2E2F2G2B2e2f2g4a4f4d4|e'4b4b4a4a4g4g4f4|f4e4e4d4d4B4B4A4|\r\nV: Vocal\r\n\"Em\"z32|\"Em\"z32|\r\nV: Ins\r\nZ2|";
+let visual = null;
+let visual0 = null;
+let synthCtl = null;
+let hlEls = []; // 当前高亮中的图层
+let hlMiss = 0; // 高亮未命中计数（诊断）
+
+function collectNotes() {
+  // 音符总数（用于元信息展示，不再参与定位）
+  return document.querySelectorAll("#score .abcjs-note").length;
+}
+function clearHighlight() {
+  hlEls.forEach(function (l) { try { if (l && l.classList) l.classList.remove("playing"); } catch (x) {} });
+  hlEls = [];
+}
+function highlightEvent(event) {
+  if (!event || !event.elements || !event.elements.length) return false;
+  clearHighlight();
+  var hit = 0;
+  // elements = 若干组，每组是一个数组，内含该音符的 SVG 元素（DOM 节点，有 classList）
+  event.elements.forEach(function (group) {
+    (Array.isArray(group) ? group : [group]).forEach(function (svgEl) {
+      if (svgEl && svgEl.classList) {
+        svgEl.classList.add("playing");
+        hlEls.push(svgEl);
+        hit++;
+      }
+    });
+  });
+  return hit > 0;
+}
+// 精确高亮：事件（由 abc 解析出的逐音符时序生成）自带该音符的绘制元素（layers），
+// 直接给它们的 SVG 元素加 playing 类上色——零索引猜测、长音/装饰音/多声部天然对齐。
+// 小节块高亮：当前小节（同系统三声部同列）所有音符保持亮，换小节/换行时整块切换
+let hlLine = -1;
+let hlMeasure = -1;
+const CURSOR = {
+  beatSubdivisions: 4,
+  onStart: clearHighlight,
+  onFinished: clearHighlight,
+  onBeat: function () {},
+  onEvent: function (evt) {
+    if (!evt) { clearHighlight(); return; } // null = 播放结束
+    var mv = typeof evt.measureNumber === "number" ? evt.measureNumber : -1;
+    var lv = typeof evt.line === "number" ? evt.line : -1;
+    if (mv !== hlMeasure || lv !== hlLine) {
+      clearHighlight();
+      hlMeasure = mv;
+      hlLine = lv;
+    }
+    var ok = highlightEvent(evt);
+    if (!ok && hlMiss++ < 3) {
+      var m = document.getElementById("meta");
+      if (m) m.textContent = ("诊断: 事件元素数=" + (evt.elements ? evt.elements.length : 0) + "，未找到可用 SVG 引用（高亮未生效）");
+    }
+  },
+  onLineEnd: function () {}
+};
+
+function fixSvg() {
+  // abcjs 为多声部每行生成一个 svg（内含两条五线谱），其 viewBox 高度未覆盖全部内容，
+  // 长谱会裁掉末尾的 Ins 声部。用 getBBox() 实测内容包围盒、按真实内容重设 viewBox，
+  // 再让高度由 viewBox 比例决定，保证整行完整显示。
+  Array.prototype.forEach.call(document.querySelectorAll("#score svg"), function (svg) {
+    var bb = null;
+    try { bb = svg.getBBox(); } catch (e) {}
+    if (bb && bb.width > 0 && bb.height > 0) {
+      svg.setAttribute("viewBox", [bb.x, bb.y, bb.width, bb.height].join(" "));
+    }
+    svg.setAttribute("preserveAspectRatio", "xMidYMin meet");
+    svg.removeAttribute("style");
+    svg.setAttribute("width", "100%");
+    svg.removeAttribute("height");
+    svg.style.display = "block";
+  });
+}
+function rerender() {
+  const el = document.getElementById("score");
+  el.innerHTML = "";
+  visual = ABCJS.renderAbc("score", ABC_TEXT, { add_classes: true, responsive: "resize", scale: 0.95, print: true });
+  visual0 = visual && visual[0];
+  fixSvg();
+  const nCount = collectNotes();
+  const mt = (visual0 && visual0.metaText) || {};
+  const shown = (mt.title ? mt.title + "  ·  " : "") + (visual0 ? visual0.lines.length + " 行" : "?") + " · 调号 " + (mt.key || "?") + " · 速度 " + (mt.tempo || "?") + " · 音符 " + nCount;
+  document.getElementById("meta").textContent = shown || "曲谱已渲染";
+}
+
+function getSynth() {
+  if (!synthCtl) {
+    synthCtl = new ABCJS.synth.SynthController();
+    synthCtl.load("#ctl", CURSOR, { displayPlay: true, displayProgress: true, displayRestart: true, displayLoop: false, displayWarp: false });
+  }
+  return synthCtl;
+}
+function playScore() {
+  try {
+    if (!visual0) rerender();
+    stopScore();
+    const ctl = getSynth();
+    ctl.setTune(visual0).then(function () { ctl.play(); }).catch(function (e) { alert("播放失败: " + (e && e.message ? e.message : e)); });
+  } catch (e) { alert("播放失败: " + e.message); }
+}
+function stopScore() {
+  try { if (synthCtl) synthCtl.pause(); } catch (e) {}
+  clearHighlight();
+}
+renderReady();
+function renderReady() { rerender(); }
+</script></body></html>

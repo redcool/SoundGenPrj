@@ -1,0 +1,9 @@
+# 《去国》· 风格建议（style）—— 双风格变体
+> 基调：微子（殷三仁·去国存祀）→ 悲·壮 / 史诗·苍；两卡拉开。
+## 卡 A（v1a · seed 832801）—— 悲情民谣摇滚
+- 基座：folk rock（86 BPM） | 主奏：木吉他 + 二胡 | 节奏：轻鼓 | 嗓音：**沙哑男声（离乡）** | 情绪：悲·壮
+## 卡 B（v1b · seed 832802）—— 史诗叙事摇滚
+- 基座：史诗摇滚（92 BPM） | 主奏：大提琴 + 管弦 | 节奏：行军鼓渐弱 | 嗓音：**低沉男声（存祀）** | 情绪：史诗·苍
+## 引擎
+- v1a: sad folk rock, acoustic guitar and erhu, hoarse male voice of leaving the homeland, gentle sorrow that lifts, 86 bpm, Mandarin Chinese vocals
+- v1b: epic narrative rock, cello and strings, low male voice carrying ancestral ritual vessels, slow drums fading, 92 bpm, Mandarin Chinese vocals

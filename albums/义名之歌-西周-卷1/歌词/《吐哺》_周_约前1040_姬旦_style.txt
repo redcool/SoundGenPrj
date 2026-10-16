@@ -1,0 +1,21 @@
+# 《吐哺》· 风格建议（style）—— 4 卡（短档 2 + 叙事档 2）
+
+> 基调：周公旦（摄政·仁·礼）→ 敬·庄严（短）与敬·史诗/温（叙）。四卡均按《风格配器库》拉开。
+
+## 短档（v1a/v1b · 词 631 字 · duration 340）
+### 卡 A（v1a · seed 832401) —— 殿乐/古典摇滚（颂歌）
+- 基座：古典摇滚（96 BPM） | 混搭：颂歌 + 管弦 | 主奏：编钟 + 管弦乐群 | 副奏：合唱 | 节奏：仪式鼓 + 大锣 | 嗓音：磁性男中音 + 齐唱 | 情绪：敬·庄严
+### 卡 B（v1b · seed 832402）—— 说书民谣摇滚
+- 基座：folk rock（84 BPM） | 混搭：民谣说书 | 主奏：木吉他 + 竹笛 | 副奏：— | 节奏：轻鼓 + 铃 | 嗓音：温厚气声叙述男声 | 情绪：敬·温
+
+## 叙事档（n1a/n1b · 词 820 字 · duration 450，6-7 分钟）
+### 卡 A（n1a · seed 832403）—— 长篇史诗摇滚（念白+华彩）
+- 基座：史诗摇滚（84 BPM） | 混搭：管弦 + 仪礼 | 主奏：管弦 + 编钟（华彩间奏器乐） | 副奏：合唱群 | 节奏：仪式鼓 | 嗓音：**深男中音叙唱 + 男声旁白（引子/尾声念白）** | 情绪：敬·史诗
+### 卡 B（n1b · seed 832404）—— 说书长叙事（念白重）
+- 基座：民谣叙事（76 BPM） | 混搭：说书 + 民俗 | 主奏：木吉他 + 竹笛 + 二胡点缀 | 副奏：— | 节奏：轻鼓 + 手铃 | 嗓音：**苍老说书男声 + 大段念白** | 情绪：温·苍茫
+
+## 引擎 style 文本
+- v1a: ceremonial classical rock anthem, bronze bells and orchestral strings, magnetic baritone with choir, solemn majestic 96 bpm, ancient ritual atmosphere, Mandarin Chinese vocals
+- v1b: folk storytelling rock, acoustic guitar and bamboo flute, warm hushed narrator male voice, gentle 84 bpm, intimate hearth-tale mood, Mandarin Chinese vocals
+- n1a: epic long-form narrative rock, orchestral strings with bronze bells, deep baritone narrating and singing with spoken intro/outro, ceremonial drums, instrumental interlude, solemn historical saga, 84 bpm, 6-7 minutes, Mandarin Chinese vocals
+- n1b: long-form folk ballad narration, acoustic guitar, erhu and bamboo flute accents, aged storyteller male voice with heavy spoken sections, gentle drums, warm melancholic saga, 76 bpm, 6-7 minutes, Mandarin Chinese vocals

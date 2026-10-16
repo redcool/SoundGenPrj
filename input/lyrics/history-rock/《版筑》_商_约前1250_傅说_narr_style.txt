@@ -1,0 +1,9 @@
+# 《版筑》· 叙档风格（style）—— 双风格变体
+> 叙词 ~1013 字（念白×2 + 章节×7 + 华彩 + 主题句回环）。基调：傅说（布衣拜相）→ 温·励志 / 智·哲。
+## 叙卡 A（n1a · seed 833301）—— 逆袭史诗叙事
+- 基座：史诗摇滚（92 BPM） | 主奏：木吉他 + 管弦渐入 | 节奏：夯土鼓点 | 嗓音：温厚男声叙唱 + 念白 | 华彩：器乐间奏 | 情绪：温·励志
+## 叙卡 B（n1b · seed 833302）—— 说书哲叙
+- 基座：民谣叙事（80 BPM） | 主奏：木吉他 + 陶笛 | 节奏：轻鼓 | 嗓音：说书男声 + 大段念白 | 情绪：智·哲
+## 引擎
+- n1a: epic rise-from-mud narrative rock, acoustic guitar growing into orchestra, warm male narrating and singing with spoken sections, stamping drum rhythm, instrumental interlude, 92 bpm, 6 minutes, Mandarin Chinese vocals
+- n1b: long-form folk philosophical narration, acoustic guitar and ocarina, storyteller male voice with spoken sections, gentle drums, 80 bpm, 6 minutes, Mandarin Chinese vocals

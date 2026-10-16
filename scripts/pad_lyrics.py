@@ -33,7 +33,12 @@ def main():
         return
     guard = 0
     while body_count(master) < a.min_chars and guard < 8:
-        master = master.rstrip("\n") + "\n\n[Chorus · 齐唱尾]\n" + "\n".join(chorus) + "\n"
+        block = "[Chorus]\n" + "\n".join(chorus)
+        idx = master.find("\n[Final")
+        if idx >= 0:
+            master = master[:idx] + "\n\n" + block + master[idx:]
+        else:
+            master = master.rstrip("\n") + "\n\n" + block + "\n"
         guard += 1
     open(a.master, "w", encoding="utf-8").write(master)
     if a.clean and os.path.exists(a.clean):

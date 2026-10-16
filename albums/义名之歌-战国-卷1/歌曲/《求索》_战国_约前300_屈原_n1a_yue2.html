@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8"><title>曲谱渲染器</title>
+<link rel="stylesheet" href="abcjs-audio.css">
+<style>
+  body { font-family: "Microsoft YaHei", sans-serif; margin: 2rem; max-width: 1100px; margin-inline: auto; }
+  h1 { font-size: 1.3rem; }
+  .controls { margin: 0.8rem 0; display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; }
+  button { padding: 0.4rem 1rem; cursor: pointer; }
+  .paper { background: #fff; padding: 1.2rem; box-shadow: 0 1px 6px rgba(0,0,0,.25); }
+  #score svg { display: block; margin-inline: auto; }
+  #score svg { height: auto !important; max-width: 100% !important; }
+  .meta { color: #555; font-size: .85rem; margin-top: .8rem; white-space: pre-wrap; font-family: Consolas, monospace; }
+  @page { margin: 1cm; }
+  @media print {
+    .controls, #ctl, .meta { display: none !important; }
+    body { margin: 0; }
+    .paper { box-shadow: none; padding: 0; }
+    #score svg { width: 100% !important; height: auto !important; max-width: 100% !important; page-break-inside: avoid; break-inside: avoid; }
+    html, body, .paper, #score { overflow: visible !important; height: auto !important; }
+  }
+  /* 播放时音符高亮：事件携带的 SVG 元素加 .playing */
+  .playing, .playing * { fill: #ff6b35 !important; }
+  .playing, .playing g, .playing path { filter: drop-shadow(0 0 2px rgba(255,107,53,.9)); }
+  #ctl { margin: .6rem 0; }
+  #ctl .abcjs-midi-progress-background, #ctl .abcjs-midi-progress-indicator { background: #bbb; }
+  @media print { .controls, #ctl { display: none } body { margin: 0 } .paper { box-shadow: none } }
+</style></head><body>
+<h1>曲谱渲染器</h1>
+<div class="controls">
+  <button onclick="rerender()">⟳ 重绘</button><button onclick="playScore()">▶ 播放曲谱</button><button onclick="stopScore()">⏹ 停止</button>
+  <button onclick="window.print()">🖨 打印 / 存 PDF</button>
+</div>
+<div id="ctl"></div>
+<div class="paper"><div id="score"></div></div>
+<div class="meta" id="meta"></div>
+<script src="abcjs-basic.js"></script>
+<script>
+const ABC_TEXT = "X:1\r\nT:\r\nM:4/4\r\nL:1/16\r\nQ:1/4=88\r\nV: Vocal clef=treble name=\"Vocal Melody\" snm=\"Vocal\"\r\nV: Ins clef=treble name=\"Ins Melody\" snm=\"Inst.\"\r\nK:Em\r\n%%barNumbers 1\n% intro\r\nV: Vocal\r\nz4\"Em\"z12|\"Em\"z16|\"Em\"z16|\"Em\"z16|\r\nV: Ins\r\nZ|e'8z2a'b'b'b'b'b'|b'b'b'z12z|e'2b'2a'2b'2g'2a'2f'2d'2|\r\nV: Vocal\r\n\"Em\"z16|\"Em\"z16|\"Em\"z16|\"Cmaj7\"z16|\r\nV: Ins\r\ne'16|e'2b2a2b2g2a2f2d2|e16|e2b2a2b2g2a2f2d2|\r\nV: Vocal\r\n\"D\"z16|\"Em\"z16|\"Em\"z16|\"Cmaj7\"z16|\r\nV: Ins\r\ne16|e'2b'2a'2b'2g'2a'2f'2d'2|e'16|Z|\r\nV: Vocal\r\n\"D\"z16|\"Em\"z16|\"Em\"z16|\r\nV: Ins\r\nZ|e16|Z|\r\n% verse\r\nV: Vocal\r\n\"Em\"EEEEB2A2B4z4|\"D6\"EEEEB2B2z6EE|\"Cmaj7\"B2AAG2E2B2AAG2E2|\"Am\"EDEDEDEDEDE2E2z2|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Em\"EEEDE2EDEDE2B2B2|\"D6\"EDEDEDEDEDEEB2B2|\"Cmaj7\"BABABABABABABAGA-|\"Am\"A3z6zEDEDED|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Em\"E2E2B2B2EDEDEDED|\"D6\"E2E2ABB2EDEDEDED|\"Cmaj7\"E2B2A2B2A2B2A2B2|\"Am\"A4z4ABAGA2AG|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Em\"B2z2B2z2AGA2zGAG|\"D\"A2AGAGAGA2B2A4|\"Cmaj7\"G3E8z4z|\"Cmaj7\"z16|\r\nV: Ins\r\nZ4|\r\n% chorus\r\nV: Vocal\r\n\"Em\"e2e2e2BBe2e2edBd|\"D\"e2e2e2B2e4z4|\"Cmaj7\"e2e2e2BBe2e2edBd|\"Am\"e4d2B2A4B4|\r\nV: Ins\r\nZ4|\r\n% verse\r\nV: Vocal\r\n\"Em\"EDEDEDEDEDEDEDED|\"D\"EDEDEDEDEDEDE2B2|\"Cmaj7\"B2z3ABABABABABA|\"Am\"BABABABABABABABA|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Em\"B2E2B2BAB2BABAB2|\"D\"BAB2B2BAB2E2zEED|\"Cmaj7\"E2BABABAB2BABABA|\"Am\"B2B2B2BABABABABA|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Em\"B16|\"D6\"z16|\"Cmaj7\"z16|\"Am7\"z16|\r\nV: Ins\r\nZ|e8z4a4|e8z8|ez12z3|\r\nV: Vocal\r\n\"Em\"EDEDEDEDE2EDEDED|\"D\"EDEDEDE2E2E2EDED|\"Cmaj7\"E2EDEDEDE2E2EDED|\"Am\"EDEDEDEDE4z2ED|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Em\"E2B2A2B2A2B2A2G2|\"D\"A4A4A4G4|\"Cmaj7\"A16-|\"Cmaj7\"A16|\r\nV: Ins\r\nZ4|\r\n% chorus\r\nV: Vocal\r\n\"Em\"e2e2e2BBe2e2edBd|\"D\"e4d2B2e4z4|\"Cmaj7\"e2e2e2BBe2e2edBd|\"Am\"e4d2B2A4B4|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Em\"EDEDEDEDEDEDEDED|\"D\"EDEDEDEDEDEDE2ED|\"Cmaj7\"EDEDEDEDEDEDEDED|\"Am\"EDEDE2EDE2E4z2|\r\nV: Ins\r\nZ4|\r\n% verse\r\nV: Vocal\r\n\"Em\"EEEEB2B2E2EEBBBA|\"D\"B2B2EDEDEDEDEDED|\"Cmaj7\"E2B2BABABABABABA|\"Am\"BABABABABAB2BAB2|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Em\"B4BAB2B2BABABA|\"D\"BABABABAB2B2B4|\"Cmaj7\"z16|\"Cmaj7\"z16|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Em\"EDEDEDE2EDEDEDE2|\"D\"EDEDEDEDEDEDEDED|\"Cmaj7\"EDEDEDEDEDE2E2E2|\"Am\"E2E2E2E2E2E2EDED|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Em\"E2B2A2B2A4B4-|\"Em\"B12z4|\r\nV: Ins\r\nZ2|\r\n% chorus\r\nV: Vocal\r\n\"Em\"e2e2e2BBe2e2edBd|\"D\"e2e2e2B2e4z4|\"Cmaj7\"e2e2e2BBe2e2edBd|\"Am\"e4d2B2A4B4|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Em\"e2e2e2BBe2e2edBd|\"D\"e2e2d2B2e4z4|\"Cmaj7\"e2e2e2BBe2e2edBd|\"Am\"e4d2B2A4B4|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Em\"e2e2e2BBe2e2edBd|\"D\"e4d2B2e4z4|\"Cmaj7\"e2e2e2BBe2e2edBd|\"Am\"e4d2B2A4B4|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Em\"e2e2e2BBe2e2edBd|\"D\"e4d2B2e4z4|\"Cmaj7\"e2e2e2BBe2e2edBd|\"Am\"e4d2B2A4B4|\r\nV: Ins\r\nZ4|\r\nV: Vocal\r\n\"Em\"z16|\r\nV: Ins\r\nZ|\r\n% interlude\r\nV: Vocal\r\n\"Em\"z16|\"D\"z16|\"Cmaj7\"z16|\"Am7\"z16|\r\nV: Ins\r\nZ|f4z8g4|e12g4|e12z4|\r\nV: Vocal\r\n\"Em\"z16|\"D\"z16|\"Cmaj7\"z16|\"Am7\"z16|\r\nV: Ins\r\ne4z8g4|f12g4|e12g4|e16|\r\nV: Vocal\r\n\"Am7\"z16|\"Am7\"z16|\"Am7\"z16|\"Am7\"z16|\r\nV: Ins\r\nZ2|e2b2a2b2g2a2f2d2|e8z8|\r\nV: Vocal\r\n\"Am7\"z16|\"Am7\"z16|\"Em\"z16|\"D\"z16|\r\nV: Ins\r\nZ2|e'2b'2a'2b'2g'2a'2f'2d'2|e'16|\r\nV: Vocal\r\n\"Cmaj7\"z16|\"Am7\"z16|\"Em\"z16|\"D\"z16|\r\nV: Ins\r\ne'2b'2a'2b'2g'2a'2f'2d'2|e'16|e'2b'2a'2b'2g'2a'2f'2d'2|e'16|\r\nV: Vocal\r\n\"Cmaj7\"z16|\"Am7\"z16|\"Am7\"z16|\"Em\"z16|\r\nV: Ins\r\ne'2b'2a'2b'2g'2a'2f'2d'2|e'16|Z|z12z2Bd|\r\n% chorus\r\nV: Vocal\r\n\"Em\"z16|\"D\"z16|\"Cmaj7\"z16|\"Am7\"z16|\r\nV: Ins\r\ne4e2Bde4e2Bd|e4edBde4z2Bd|e4e2Bde4edBd|e4edBde8|\r\nV: Vocal\r\n\"Em\"z16|\"D\"z16|\"Cmaj7\"z16|\"Am7\"z16|\r\nV: Ins\r\ne2b2a2b2g2a2f2d2|e16|e2b2a2b2g2a2f2d2|e16|\r\nV: Vocal\r\n\"Am7\"z16|\"Am7\"z16|\r\nV: Ins\r\nZ2|";
+let visual = null;
+let visual0 = null;
+let synthCtl = null;
+let hlEls = []; // 当前高亮中的图层
+let hlMiss = 0; // 高亮未命中计数（诊断）
+
+function collectNotes() {
+  // 音符总数（用于元信息展示，不再参与定位）
+  return document.querySelectorAll("#score .abcjs-note").length;
+}
+function clearHighlight() {
+  hlEls.forEach(function (l) { try { if (l && l.classList) l.classList.remove("playing"); } catch (x) {} });
+  hlEls = [];
+}
+function highlightEvent(event) {
+  if (!event || !event.elements || !event.elements.length) return false;
+  clearHighlight();
+  var hit = 0;
+  // elements = 若干组，每组是一个数组，内含该音符的 SVG 元素（DOM 节点，有 classList）
+  event.elements.forEach(function (group) {
+    (Array.isArray(group) ? group : [group]).forEach(function (svgEl) {
+      if (svgEl && svgEl.classList) {
+        svgEl.classList.add("playing");
+        hlEls.push(svgEl);
+        hit++;
+      }
+    });
+  });
+  return hit > 0;
+}
+// 精确高亮：事件（由 abc 解析出的逐音符时序生成）自带该音符的绘制元素（layers），
+// 直接给它们的 SVG 元素加 playing 类上色——零索引猜测、长音/装饰音/多声部天然对齐。
+// 小节块高亮：当前小节（同系统三声部同列）所有音符保持亮，换小节/换行时整块切换
+let hlLine = -1;
+let hlMeasure = -1;
+const CURSOR = {
+  beatSubdivisions: 4,
+  onStart: clearHighlight,
+  onFinished: clearHighlight,
+  onBeat: function () {},
+  onEvent: function (evt) {
+    if (!evt) { clearHighlight(); return; } // null = 播放结束
+    var mv = typeof evt.measureNumber === "number" ? evt.measureNumber : -1;
+    var lv = typeof evt.line === "number" ? evt.line : -1;
+    if (mv !== hlMeasure || lv !== hlLine) {
+      clearHighlight();
+      hlMeasure = mv;
+      hlLine = lv;
+    }
+    var ok = highlightEvent(evt);
+    if (!ok && hlMiss++ < 3) {
+      var m = document.getElementById("meta");
+      if (m) m.textContent = ("诊断: 事件元素数=" + (evt.elements ? evt.elements.length : 0) + "，未找到可用 SVG 引用（高亮未生效）");
+    }
+  },
+  onLineEnd: function () {}
+};
+
+function fixSvg() {
+  // abcjs 为多声部每行生成一个 svg（内含两条五线谱），其 viewBox 高度未覆盖全部内容，
+  // 长谱会裁掉末尾的 Ins 声部。用 getBBox() 实测内容包围盒、按真实内容重设 viewBox，
+  // 再让高度由 viewBox 比例决定，保证整行完整显示。
+  Array.prototype.forEach.call(document.querySelectorAll("#score svg"), function (svg) {
+    var bb = null;
+    try { bb = svg.getBBox(); } catch (e) {}
+    if (bb && bb.width > 0 && bb.height > 0) {
+      svg.setAttribute("viewBox", [bb.x, bb.y, bb.width, bb.height].join(" "));
+    }
+    svg.setAttribute("preserveAspectRatio", "xMidYMin meet");
+    svg.removeAttribute("style");
+    svg.setAttribute("width", "100%");
+    svg.removeAttribute("height");
+    svg.style.display = "block";
+  });
+}
+function rerender() {
+  const el = document.getElementById("score");
+  el.innerHTML = "";
+  visual = ABCJS.renderAbc("score", ABC_TEXT, { add_classes: true, responsive: "resize", scale: 0.95, print: true });
+  visual0 = visual && visual[0];
+  fixSvg();
+  const nCount = collectNotes();
+  const mt = (visual0 && visual0.metaText) || {};
+  const shown = (mt.title ? mt.title + "  ·  " : "") + (visual0 ? visual0.lines.length + " 行" : "?") + " · 调号 " + (mt.key || "?") + " · 速度 " + (mt.tempo || "?") + " · 音符 " + nCount;
+  document.getElementById("meta").textContent = shown || "曲谱已渲染";
+}
+
+function getSynth() {
+  if (!synthCtl) {
+    synthCtl = new ABCJS.synth.SynthController();
+    synthCtl.load("#ctl", CURSOR, { displayPlay: true, displayProgress: true, displayRestart: true, displayLoop: false, displayWarp: false });
+  }
+  return synthCtl;
+}
+function playScore() {
+  try {
+    if (!visual0) rerender();
+    stopScore();
+    const ctl = getSynth();
+    ctl.setTune(visual0).then(function () { ctl.play(); }).catch(function (e) { alert("播放失败: " + (e && e.message ? e.message : e)); });
+  } catch (e) { alert("播放失败: " + e.message); }
+}
+function stopScore() {
+  try { if (synthCtl) synthCtl.pause(); } catch (e) {}
+  clearHighlight();
+}
+renderReady();
+function renderReady() { rerender(); }
+</script></body></html>

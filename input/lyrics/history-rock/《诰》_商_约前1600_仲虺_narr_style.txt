@@ -1,0 +1,9 @@
+# 《诰》· 叙档风格（style）—— 双风格变体
+> 叙词 ~932 字。基调：仲虺（开国左相·诰文）→ 庄·律 / 智·机。
+## 叙卡 A（n1a · seed 833801）—— 诰书史诗叙事
+- 基座：史诗摇滚（100 BPM） | 主奏：鼓 + 贝斯 + 铜管 | 节奏：进行鼓 | 嗓音：庄重男中音叙唱 + 念白 | 华彩：器乐间奏 | 情绪：庄·律
+## 叙卡 B（n1b · seed 833802）—— 智谋说书长叙
+- 基座：智谋叙事故（104 BPM） | 主奏：synth 琶音 + 合成贝斯 | 节奏：鼓机 | 嗓音：冷声叙唱 + 念白 | 情绪：智·机
+## 引擎
+- n1a: solemn edict epic narrative, drums bass and brass, dignified baritone narrating and singing with spoken sections, march drums, instrumental interlude, 100 bpm, 6 minutes, Mandarin Chinese vocals
+- n1b: cunning long-form narration, synth arpeggios and synth bass with drum machine, cold witty male narrating with spoken sections, 104 bpm, 6 minutes, Mandarin Chinese vocals

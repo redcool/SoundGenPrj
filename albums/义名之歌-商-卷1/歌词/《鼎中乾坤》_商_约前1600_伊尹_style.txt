@@ -1,0 +1,23 @@
+# 《鼎中乾坤》· 风格建议（style）
+
+> 曲风矩阵：伊尹（谋臣·智·五朝之相）→ **科技律动 techno/rock**（测量般的精准+智谋感）。
+> 基调：历史摇滚（智谋分支）—— 律动贝斯 × 琶音 synth × 老练声线 × 副歌温热。
+
+## 1. YuE2（本地）
+--style：
+```
+intelligent groove rock with techno pulse, steady syncopated bass, crisp arpeggio synth, seasoned male voice, measured confident narration, warm grand chorus, subtle zheng pluck color, precise clockwork rhythm, 4/4 around 112 bpm, Mandarin Chinese vocals
+```
+参数：歌词驱动、planning full、guidance 1.0、seed 固定、max_duration 340、中文发声、词长 560+。
+
+## 2. Music3 caption
+Global Metadata:
+genre: 历史摇滚 / 智谋 techno-rock (Chinese strategist groove)
+mood: 沉稳、通透、燃 (measured, lucid, warm-fiery)
+bpm: 112, 4/4, duration: ~5:00, language: Mandarin
+instruments: syncopated bass, arpeggio synth, drums, electric guitar, zheng-ish pluck
+Vocal: seasoned male lead, confident measured verses, warm anthemic chorus
+Arrangement: pot-boil synth intro → verse1 → verse2 → chorus → bridge (drums+voice) → verse3 → chorus → final chorus (big, then steam-fade)
+
+## 3. suno 一行
+Chinese strategist groove rock, techno pulse, syncopated bass, arpeggio synth, seasoned male vocals, anthemic warm chorus, 5 minutes, Mandarin

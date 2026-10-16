@@ -1,0 +1,101 @@
+X:1
+T:
+M:4/4
+L:1/16
+Q:1/4=92
+V: Vocal clef=treble name="Vocal Melody" snm="Vocal"
+V: Ins clef=treble name="Ins Melody" snm="Inst."
+K:F#
+% intro
+V: Vocal
+Z|"D#m"z16|"D#m"z16|"D#m"z16|
+V: Ins
+Z|d'4a2c'2g2a2f2g2|d12z4|d'4a2c'2g2a2f2g2|
+V: Vocal
+"D#m"z16|"D#m"z16|"F#"z16|"C#"z16|
+V: Ins
+a8z4A2cA|d4d2cAd6cA|A3cG2FDF6z2|G3FGFGAc3AGFDC|
+V: Vocal
+"D#m"z16|
+V: Ins
+D16|
+% verse
+V: Vocal
+"D#m"D2D2D2A2A4z2D2|"F#"F3G3F2"D#m"D4z4|"D#m"D2D2D2A2A2G2G2F2|"F#"A4z12|
+V: Ins
+Z4|
+V: Vocal
+"D#m"d2d2d2cdd4z2A2|"F#"c2c2c2A2c2AGA2z2|"C#"G2G2G2A2G2F2D2C2|"D#m"D6z8zA,|
+V: Ins
+Z3|z8D2F2G2Az|
+V: Vocal
+"D#m"D2D2D2D2A2A4z2|"F#"F3G3F2"D#m"D4z4|"D#m"D2D2D2A2A4G2F2|"F#"G2A4z8A2|
+V: Ins
+Z4|
+V: Vocal
+"D#m"d3d3cdd4z4|"F#"c3A3c2A4z4|"C#"G2G2G2A2G2F2D2C2|"D#m"F2D6z8|
+V: Ins
+Z4|
+% chorus
+V: Vocal
+"D#m"d4a4d4z4|"F#"c2d2f2d2c4z4|"C#"G2G2G2A2G2F2D2C2|"D#m"D6z8z2|
+V: Ins
+Z3|z6c2d2f2g2a2|
+V: Vocal
+"D#m"d4a4d4z4|"F#"c2d2f2d2c4z4|"C#"G2G2G2A2G4D2C2|"D#m"D8z8|
+V: Ins
+Z3|z12A2cA|
+% interlude
+V: Vocal
+"D#m"z16|"F#"z16|"C#"z16|"D#m"z16|
+V: Ins
+d3zd2cAd6cA|A3cG2FDF6z2|G3FGFGAc3AGFDC|D16|
+% verse
+V: Vocal
+"D#m"D2D2D2A2A4z2D2|"F#"F3G3F2"D#m"D4z4|"D#m"D2D2D2A2A2G2G2F2|"F#"G2A4z8z2|
+V: Ins
+Z4|
+V: Vocal
+"D#m"d3d3cdd4z4|"F#"c3A3c2A4z4|"C#"G2G2G2A4F2D2C2|"D#m"D8z8|
+V: Ins
+Z4|
+% chorus
+V: Vocal
+"D#m"d4a4d4z4|"F#"c2d2f2d2c4z4|"C#"G2G2G2A2G2F2D2C2|"D#m"D6z8z2|
+V: Ins
+Z3|z6c2d2f2g2a2|
+V: Vocal
+"D#m"d4a4d4z4|"F#"c2d2f2d2c4z4|"C#"G2G2G2A2G4D2C2|"D#m"D8z8|
+V: Ins
+Z4|
+% verse
+V: Vocal
+"D#m"D2D2D2C2D2D2D2A2|"F#"A4G2F2A4z3C|"C#"G2GFG2GFG4z4|"D#m"G3FG2GFD4z4|
+V: Ins
+Z4|
+V: Vocal
+"D#m"DDDDD2DCD2A2A2D2|"F#"C2CA,C2CA,C2C2C2A,2|"C#"C2CA,C2CA,C2C2C2CA,|"D#m"D2DCD2D6z4|
+V: Ins
+Z4|
+% chorus
+V: Vocal
+"D#m"d4a4d4z4|"F#"c2d2f2d2c4z4|"C#"G2G2G2A2G2F2D2C2|"D#m"D6z8z2|
+V: Ins
+Z3|z6c2d2f2g2a2|
+V: Vocal
+"D#m"d4a4d4z4|"F#"c2d2f2d2c4z4|"C#"G2G2G2A8z2|"C#"z8F4D2C2|
+V: Ins
+Z4|
+V: Vocal
+"D#m"D16-|"D#m"D8z8|
+V: Ins
+Z|z12A2cA|
+% outro
+V: Vocal
+"D#m"z16|"F#"z16|"C#"z16|"D#m"z16|
+V: Ins
+d6cAd6cA|A3cG2FDF6z2|G3FGFGAc3AGFDC|D16|
+V: Vocal
+"D#m"z16|
+V: Ins
+Z|

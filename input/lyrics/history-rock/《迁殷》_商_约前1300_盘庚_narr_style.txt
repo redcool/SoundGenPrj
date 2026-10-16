@@ -1,0 +1,9 @@
+# 《迁殷》· 叙档风格（style）—— 双风格变体
+> 叙词 ~1000 字（念白×2 + 章节×6 + 华彩 + 主题句回环）。基调：盘庚（迁都·果决）→ 敬·燃 / 坚定·苍。
+## 叙卡 A（n1a · seed 833101）—— 迁都史诗叙事
+- 基座：史诗摇滚（90 BPM） | 主奏：铜锣 + 大鼓 + 管弦 | 副奏：合唱 | 节奏：重鼓 | 嗓音：庄重男中音叙唱 + 念白 | 华彩：器乐间奏 | 情绪：敬·燃
+## 叙卡 B（n1b · seed 833102）—— 迁徙说书长叙
+- 基座：民谣叙事（78 BPM） | 主奏：木吉他 + 竹笛 | 节奏：稳步鼓 | 嗓音：说书男声 + 大段念白 | 情绪：坚定·苍
+## 引擎
+- n1a: epic migration narrative rock, bronze gong and heavy drums with orchestra, solemn baritone narrating and singing with spoken sections, instrumental interlude, 90 bpm, 6 minutes, Mandarin Chinese vocals
+- n1b: long-form migration folk narration, acoustic guitar and bamboo flute, resolute storyteller male voice with spoken sections, steady drums, 78 bpm, 6 minutes, Mandarin Chinese vocals
