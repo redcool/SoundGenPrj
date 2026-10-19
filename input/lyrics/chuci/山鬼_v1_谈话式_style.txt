@@ -1,0 +1,11 @@
+# 山鬼 v1 · 谈话式配器（2026-10-17 用户定调 §10）
+
+## 配器（话题式：神叹 与 山鸣）
+- 基座：空灵女声 folk（72 BPM）| 主唱：空灵女声（山中女神·思念）
+- 东方组（问）：**竹笛**（wide reverb 空旷）+ 古筝（琶音）
+- 西方组（答）：**电琵琶**（应和修饰）+ 电吉他/贝斯（情绪铺底）
+- 节奏：疏铃 | 情绪：孤·盼·空谷回响
+- 副歌：若有人兮山之阿——两组合流
+
+## 引擎 style
+ethereal call-and-response folk, bamboo flute with wide reverb and gentle guzheng as the goddess speaking, electric pipa and soft electric guitar answering in the mist, lone ethereal female voice, 72 bpm, hollow and yearning, full-band chorus on the refrain, Mandarin Chinese vocals

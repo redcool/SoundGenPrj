@@ -98,3 +98,9 @@ convert_audio.ps1  # 主逻辑，参数：-InputDir -SourceExt -TargetExt -Outpu
 - 用户偏好：中文沟通；8 分钟接受 ±30s 近似；完成后必须给出文件路径+时长+试听要点
 - 未验证的能力（如 SFX）不要承诺，标注“未验证”即可
 - **Agent 创作纪律（2026-10-14 用户确立）：不删、不破坏**——所有产出（故事/词/封面/音频/版本）一律保留；新版本以 vB/vC… 追加命名，废弃版标注“不交付”而不删除；源目录只允许新增，替换/覆盖前先留副本
+
+## 记忆系统使用(由 enroll.mjs 生成,0.0.13.11)
+> 开始任务前:读本目录 `.brain.json` 取 token → 调用 hub(127.0.0.1:45678)的 `memory.context`,**token 作为工具参数 `_brainToken` 传入**(不是 HTTP Bearer 头)。可先 `memory.whoami` 验证身份。不带 token = 访客,只看 studio 作用域,0 命中不代表没记忆。
+> 会话结束(或用户说"存储记忆"):调 `memory.submit_session`,`session_id`=当前会话 id,`kind`="digest",`content`=本会话关键决定与新知识(400-1200 字,带出处,不含密钥)。
+> 用户口令全表(存储记忆/获取记忆/查找记忆/记忆体检/登记记忆):H:/ai_works/SimpleAIBrain/docs/用户指令.md。
+> 不要直接读记忆库数据文件当记忆来源——只有走工具才有正确的可见性与脱敏。

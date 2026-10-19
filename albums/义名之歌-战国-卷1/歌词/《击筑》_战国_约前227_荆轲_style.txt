@@ -1,0 +1,6 @@
+# 《击筑》· 风格建议（style）—— 单抽（刺客暗黑摇滚）
+> 基调：荆轲（刺客·易水之诀）→ 悲·烈·孤；楚辞启示录：兮式副歌（风萧萧兮易水寒）+ 乱曰收尾。
+## 单卡（v1 · seed 835201）
+- 基座：dark rock（96 BPM） | 混搭：楚辞/悲歌 | 主奏：失真吉他 + 大提琴 + 弹拨筝（筑音近色） | 副奏：— | 节奏：沉重鼓 + 风声白噪 | 嗓音：低沉男声（冷） + 易水段念白（变徵→羽声） | 情绪：悲·烈·孤
+## 引擎
+- v1: dark assassin rock with cello and plucked zither, low cold male voice, spoken parting section over heavy drums and wind noise, 96 bpm, bleak heroic, Mandarin Chinese vocals
