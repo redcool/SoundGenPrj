@@ -1,0 +1,5 @@
+# 《叛乱》双卡（双抽）
+- A(v1a·seed 888201)：暗黑工业摇滚——双踩+降调riff+古筝低泣，黑嗓主歌×齐吼副歌 110BPM
+- B(v1b·seed 888202)：史诗叙事摇滚——管弦+编钟+行军鼓，男中音叙述 96BPM
+- A引擎：dark industrial rock, double-kick drums and down-tuned riff with guzheng undercurrent, harsh vocal verses with loud chant chorus, ominous, 110 bpm, Mandarin Chinese vocals
+- B引擎：epic narrative rock, orchestra with march drums and bronze bells, dramatic baritone narration, 96 bpm, tragic warning saga, Mandarin Chinese vocals

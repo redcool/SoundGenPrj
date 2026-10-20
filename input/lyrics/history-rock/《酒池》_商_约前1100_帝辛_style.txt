@@ -1,0 +1,5 @@
+# 《酒池》双卡（双抽·工业系）
+- A(v1a·seed 899301)：dark industrial techno——4x4鼓机+金属碰撞+低音贝斯，黑嗓主歌×齐吼副歌 118BPM
+- B(v1b·seed 899302)：industrial metal——双踩+降调riff+synth stab，死嗓主歌×重击副歌 120BPM
+- A引擎：dark industrial techno, driving four on the floor kick with metallic clank and low bass, harsh vocal with chant chorus, 118 bpm, ominous, Mandarin Chinese vocals
+- B引擎：industrial metal, double kick and down tuned riff with synth stabs, growl verses and pounding chorus, 120 bpm, apocalyptic, Mandarin Chinese vocals

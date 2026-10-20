@@ -1,0 +1,5 @@
+# 《表闾》双卡（双抽）
+- A(v1a·seed 899201)：温厚民谣——木吉他+编钟轻击，温厚男中音说书 94BPM（暖·正）
+- B(v1b·seed 899202)：赞歌交响——编钟+管弦+齐唱，男中音主唱+全合唱 96BPM（庄·公道）
+- A引擎：warm folk rock, acoustic guitar with light bronze bell accents, warm baritone storyteller, 94 bpm, gentle dignified, Mandarin Chinese vocals
+- B引擎：solemn anthem with bronze bells and orchestra, dignified baritone lead with full choir, 96 bpm, majestic vindication anthem, Mandarin Chinese vocals

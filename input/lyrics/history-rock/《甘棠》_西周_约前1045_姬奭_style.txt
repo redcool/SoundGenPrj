@@ -1,0 +1,5 @@
+# 《甘棠》双卡（双抽·民谣骨+电子肉）
+- A(v1a·seed 900501)：folk-electronic——木吉他旋律+synth pad+轻beat，温厚男声 92BPM
+- B(v1b·seed 900502)：chill techno×古筝——古筝点缀+暖synth+松弛律动 104BPM
+- A引擎：folk electronic ballad, acoustic guitar melody with soft synth pad and light beat, warm male vocal, 92 bpm, gentle heartwarming, Mandarin Chinese vocals
+- B引擎：chill techno with guzheng accents and warm synth, relaxed beat, warm male vocal, 104 bpm, cozy modern folk hybrid, Mandarin Chinese vocals
