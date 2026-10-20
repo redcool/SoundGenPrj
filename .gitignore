@@ -27,3 +27,8 @@ models/
 .output/
 # Node
 node_modules/
+
+#图片
+*.png
+*.jpg
+*.jpeg
