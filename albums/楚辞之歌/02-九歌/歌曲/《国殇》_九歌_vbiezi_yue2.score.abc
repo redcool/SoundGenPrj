@@ -1,0 +1,111 @@
+X:1
+T:
+M:4/4
+L:1/32
+Q:1/4=113
+V: Vocal clef=treble name="Vocal Melody" snm="Vocal"
+V: Ins clef=treble name="Ins Melody" snm="Inst."
+K:F#
+% intro
+V: Vocal
+Z|"D#m"z32|"D#m"z32|"D#m"z32|
+V: Ins
+Z|d'4a'4g'4a'4d'8c'4a4|d'24f'4g'4|a'4a'4g'4a'4d'8c'4z4|
+V: Vocal
+"D#m"z32|"D#m"z32|"B"z32|"C#"z32|
+V: Ins
+d'24z8|d8a8g8f8|d8a8g8f8|e16c16|
+V: Vocal
+"D#m"z32|"D#m"z32|"B"z32|"C#"z32|
+V: Ins
+d32|d8a8g8f8|d8a8g8f8|e16c16|
+V: Vocal
+"D#m"z32|"D#m"z24D4F4|
+V: Ins
+d32-|d16z16|
+% verse
+V: Vocal
+"D#m"A4A4A4G4A4D4D4F4|"B"G8G4A4D4z4D4F4|"C#"G4G4G4F4G4G4G4F4|"D#m"A8A4G4A8D4F4|
+V: Ins
+Z4|
+V: Vocal
+"D#m"A4A4A4G4A8A4d4|"B"d4c4c4A4A8z4F2F2|"C#"G4G4G4F2F2G8G4F4|"D#m"D8D4C4D8d2d2d2c2|
+V: Ins
+Z4|
+% chorus
+V: Vocal
+"D#m"d4d4d4c4d8a8|"B"d8d4c4d4z4d2d2d2c2|"C#"c4c4c4A4c8g8|"D#m"d8d4c4d4z4d2d2d2c2|
+V: Ins
+Z4|
+V: Vocal
+"D#m"d4d4d4c4d8a8|"B"d8d4c4d8z8|"C#"g4g4g4f4g8f4c4|"D#m"d24z8|
+V: Ins
+Z4|
+V: Vocal
+"D#m"d8a8g8f8|"B"d8a8g8f4z4|"C#"e8e8e4c4c8|"D#m"c4A4A4G4A12z4|
+V: Ins
+Z4|
+V: Vocal
+"D#m"d8a8g8f8|"B"d8a8g8f4z4|"C#"e16c16|"D#m"d32|
+V: Ins
+Z4|
+% interlude
+V: Vocal
+"D#m"z32|"B"z32|"C#"z32|"D#m"z32|
+V: Ins
+d4d4a4a4g4g4f4f4|d4d4a4a4g4g4f4f4|e4e4e4e4c4c4c4c4|d32|
+V: Vocal
+"D#m"z32|"B"z32|"C#"z32|"D#m"z24D4F4|
+V: Ins
+d8a8g8f8|d8a8g8f8|e16c16|d24z8|
+% verse
+V: Vocal
+"D#m"A4A4A4G4A4D4D4F4|"B"G8G4A4D4z4D4F4|"C#"G4G4G4F4G4G4G4F4|"D#m"A8A4G4A8D4F4|
+V: Ins
+Z4|
+V: Vocal
+"D#m"A4A4A4G4A8A4d4|"B"d4c4c4A4A8z4F2F2|"C#"G4G4G4F2F2G8G4F4|"D#m"D8D4C4D8d2d2d2c2|
+V: Ins
+Z4|
+% chorus
+V: Vocal
+"D#m"d4d4d4c4d8a8|"B"d8d4c4d4z4d2d2d2c2|"C#"c4c4c4A4c8g8|"D#m"d8d4c4d4z4d2d2d2c2|
+V: Ins
+Z4|
+V: Vocal
+"D#m"d4d4d4c4d8a8|"B"d8d4c4d8z8|"C#"g4g4g4f4g8f4c4|"D#m"d24z8|
+V: Ins
+Z4|
+V: Vocal
+"D#m"d8a8g8f8|"B"d8a8g8f8|"C#"e8e8e4c4c8|"D#m"c4A4A4G4A12z4|
+V: Ins
+Z4|
+V: Vocal
+"D#m"d8a8g8f8|"B"d8a8g8f8|"C#"e16c16|"D#m"d24z8|
+V: Ins
+Z4|
+V: Vocal
+"D#m"d8a8g8f8|"B"d8a8g8f8|"C#"e16c16|"D#m"d24z8|
+V: Ins
+Z4|
+V: Vocal
+"D#m"d8a8g8f8|"B"d8a8g8f8|"C#"e16c16|"D#m"d24z8|
+V: Ins
+Z4|
+V: Vocal
+"D#m"z32|"D#m"z32|
+V: Ins
+Z2|
+% outro
+V: Vocal
+"D#m"z32|"D#m"z32|"D#m"z32|"D#m"z32|
+V: Ins
+d4z8d4z4d4f4g4|d4z8d4z4d4f4e4|d4z8d4z4d4f4g4|d4z16z4f4e4|
+V: Vocal
+"D#m"z32|"D#m"z32|"D#m"z32|"D#m"z32|
+V: Ins
+d4z8d4z4d4f4g4|d4z8d4z4d4f4e4|d4z8d4z4d4f4g4|d8z16f4e4|
+V: Vocal
+"D#m"z32|"D#m"z32|"D#m"z32|
+V: Ins
+d8a8g8f8|d8a8g8f8|Z|
