@@ -1,0 +1,5 @@
+# 《共和》双卡（双抽·编钟史诗）
+- A(v1a·seed 984501)：编钟史诗摇滚——战鼓+编钟+弦乐，沉稳男中音 108BPM
+- B(v1b·seed 984502)：管弦金属——管弦+低音大鼓+失真，悲壮男声 112BPM
+- A引擎：epic rock with bronze bells and war drums, steady male baritone, 108 bpm, civic sacrifice, Mandarin Chinese vocals
+- B引擎：orchestral metal with low drum and distorted guitar, tragic male vocal, 112 bpm, regency, Mandarin Chinese vocals

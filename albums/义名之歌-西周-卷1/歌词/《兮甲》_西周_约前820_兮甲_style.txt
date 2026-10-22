@@ -1,0 +1,5 @@
+# 《兮甲》双卡（双抽·文武双全）
+- A(v1a·seed 989501)：编钟叙事摇滚——编钟+木吉他+鼓，清朗男中音 108BPM
+- B(v1b·seed 989502)：管弦金属——管弦+低音大鼓+失真，豪迈男声 112BPM
+- A引擎：narrative rock with bronze bells and guitar, clear male baritone, 108 bpm, scholar general, Mandarin Chinese vocals
+- B引擎：orchestral metal with low drum and distorted guitar, heroic male vocal, 112 bpm, poet warrior, Mandarin Chinese vocals

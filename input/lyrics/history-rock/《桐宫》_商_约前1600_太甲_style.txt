@@ -1,0 +1,5 @@
+# 《桐宫》双卡（双抽·改过暖色）
+- A(v1a·seed 911501)：chill epic——钢琴+古筝+轻律动，悔悟男声 98BPM
+- B(v1b·seed 911502)：史诗叙事×电子——编钟+弦乐+电子铺底，男中音叙述 104BPM
+- A引擎：chill epic ballad, piano and guzheng with light beat, repentant warm male vocal, 98 bpm, reflective hope, Mandarin Chinese vocals
+- B引擎：epic narrative with soft electronic underlay, bronze bells and strings, dignified baritone narration, 104 bpm, redemption saga, Mandarin Chinese vocals

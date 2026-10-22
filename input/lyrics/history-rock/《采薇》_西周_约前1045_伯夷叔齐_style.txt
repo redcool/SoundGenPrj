@@ -1,0 +1,5 @@
+# 《采薇》双卡（双抽·清苦义士）
+- A(v1a·seed 980501)：清苦民谣——竹笛+木吉他+风雪声，沙哑男中音 92BPM
+- B(v1b·seed 980502)：后摇弦乐——弦乐涌+鼓，悲怆男声 96BPM
+- A引擎：austere folk ballad with bamboo flute and acoustic guitar, wind and snow ambience, weathered male vocal, 92 bpm, righteous solitude, Mandarin Chinese vocals
+- B引擎：post-rock strings with slow build and drums, mournful male vocal, 96 bpm, moral defiance, Mandarin Chinese vocals

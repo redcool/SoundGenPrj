@@ -1,0 +1,17 @@
+# 蒹葭 · 风格卡（双抽 · yue2 擅长曲风）
+
+## v1a · 重金属/摇滚（seed 834702）
+- 基座：heavy metal / symphonic rock 112-136 BPM
+- 主奏：电琵琶+古筝 | 副奏：电吉他（失真riff）| 低音：贝斯 | 节奏：战鼓+双踩
+- 人声：粗粝男声主唱 + 副歌齐唱 | 情绪：怅惘→焦灼→狂烈→苍凉
+- 引擎：heavy metal with symphonic rock edge, electric pipa and guzheng lead, distorted electric guitar riffs, deep bass, war drums and double kick, gruff male lead with gang chorus, 112 to 136 bpm, yearning and relentless pursuit, Mandarin Chinese vocals, end with a resolving sustained chord then fade out
+
+## v1b · 工业电子/EDM（seed 834703）
+- 基座：industrial electronic / EDM 120-136 BPM
+- 主奏：合成器+电琵琶 | 副奏：古筝点缀+电吉他失真 | 低音：下行贝斯 | 节奏：电子鼓+双踩
+- 人声：冷冽男声 + 副歌齐唱 | 情绪：冷雾→压迫→狂烈→空茫
+- 引擎：industrial electronic EDM with Chinese instruments, synth arpeggios and electric pipa lead, guzheng accents, distorted guitar stabs, deep sub bass, electronic drums and double kick, cold male vocal with gang chorus, 120 to 136 bpm, obsessive pursuit in cold mist, Mandarin Chinese vocals, end with a resolving sustained chord then fade out
+
+## 共同
+- 歌词：蒹葭原文 4 遍（每遍 Chorus 起 + 3 段 Verse），双版词逐行同构；
+- 时长目标：约 4 分钟（duration 250）；交付 mp3 320k + 歌词 + ABC + HTML + 生成记录。

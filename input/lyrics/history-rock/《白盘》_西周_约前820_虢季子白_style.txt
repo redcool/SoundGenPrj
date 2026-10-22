@@ -1,0 +1,5 @@
+# 《白盘》双卡（双抽·边塞战功）
+- A(v1a·seed 988501)：边塞史诗摇滚——战鼓+低音+编钟，雄浑男中音 110BPM
+- B(v1b·seed 988502)：管弦金属——管弦+低音大鼓+失真，豪迈男声 114BPM
+- A引擎：frontier epic rock with war drums and bronze bells, heroic male baritone, 110 bpm, border victory, Mandarin Chinese vocals
+- B引擎：orchestral metal with low drum and distorted guitar, triumphant male vocal, 114 bpm, bronze inscription, Mandarin Chinese vocals

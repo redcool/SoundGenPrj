@@ -1,0 +1,5 @@
+# 《中兴》双卡（双抽·复兴史诗）
+- A(v1a·seed 990501)：编钟史诗摇滚——编钟+战鼓+弦乐，坚毅男中音 108BPM
+- B(v1b·seed 990502)：管弦金属——管弦+低音大鼓+失真，悲壮男声 114BPM
+- A引擎：epic rock with bronze bells, war drums and strings, resolute male baritone, 108 bpm, restoration, Mandarin Chinese vocals
+- B引擎：orchestral metal with low drum and distorted guitar, tragic male vocal, 114 bpm, last light, Mandarin Chinese vocals

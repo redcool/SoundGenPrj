@@ -1,0 +1,5 @@
+# 《悔》双卡（双抽·改过暖色）
+- A(v1a·seed 912501)：chill epic——木吉他+古筝+轻律动，悔悟男声 100BPM
+- B(v1b·seed 912502)：史诗叙事×电子——编钟+弦乐+电子铺底，男中音 106BPM
+- A引擎：chill epic, acoustic guitar and guzheng with light beat, repentant warm male vocal, 100 bpm, bright hope, Mandarin Chinese vocals
+- B引擎：epic narrative with soft electronic underlay, bronze bells and strings, dignified baritone, 106 bpm, redemption anthem, Mandarin Chinese vocals

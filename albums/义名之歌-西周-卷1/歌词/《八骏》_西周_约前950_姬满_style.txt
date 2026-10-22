@@ -1,0 +1,5 @@
+# 《八骏》双卡（双抽·远方史诗）
+- A(v1a·seed 987501)：史诗摇滚——鼓+编钟+笛，苍劲男中音 108BPM
+- B(v1b·seed 987502)：管弦金属——管弦+低音大鼓+失真，豪迈男声 112BPM
+- A引擎：epic rock with war drums, bronze bells and flute, weathered male baritone, 108 bpm, far horizons, Mandarin Chinese vocals
+- B引擎：orchestral metal with low drum and distorted guitar, heroic male vocal, 112 bpm, mythic journey, Mandarin Chinese vocals

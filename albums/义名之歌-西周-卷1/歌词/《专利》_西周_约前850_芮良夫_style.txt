@@ -1,0 +1,5 @@
+# 《专利》双卡（双抽·编钟谏诤）
+- A(v1a·seed 985501)：编钟谏诤摇滚——编钟+木吉他+鼓，清正男中音 106BPM
+- B(v1b·seed 985502)：管弦金属——管弦+低音大鼓+失真，愤然男声 110BPM
+- A引擎：impassioned rock with bronze bells and acoustic guitar, clear male baritone, 106 bpm, remonstrance, Mandarin Chinese vocals
+- B引擎：orchestral metal with low drum and distorted guitar, indignant male vocal, 110 bpm, warning against monopoly, Mandarin Chinese vocals

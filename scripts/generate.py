@@ -22,7 +22,7 @@ def main():
     ap.add_argument("--guidance", type=float, default=1.0)
     ap.add_argument("--out", default=None, help="交付前缀（默认 output/yue2/<basename>）")
     ap.add_argument("--format", default="mp3", choices=["mp3", "flac", "wav", "ogg", "opus"])
-    ap.add_argument("--bitrate", type=int, default=320)
+    ap.add_argument("--bitrate", type=int, default=192)
     ap.add_argument("--no-save-package", action="store_true", help="关闭四件套保存（仅交付音频）")
     ap.add_argument("--abc", default=None, help="锁谱生成：传入 ABC 谱面文件（planning 需 full/melody）")
     args = ap.parse_args()

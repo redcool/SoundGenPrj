@@ -1,0 +1,101 @@
+X:1
+T:
+M:4/4
+L:1/32
+Q:1/4=85
+V: Vocal clef=treble name="Vocal Melody" snm="Vocal"
+V: Ins clef=treble name="Ins Melody" snm="Inst."
+K:G
+% intro
+V: Vocal
+Z|"Em"z32|"Em"z32|"Em"z32|
+V: Ins
+Z|e2z2e2e2e4d4e4B2d2A4B4|z4e2e2e4d4e4B2d2A4B4|e16b16|
+V: Vocal
+"Em"z32|"Em"z32|"D"z32|"C"z32|
+V: Ins
+a16z16|e2z6B4A4B8d8|A8z4B4F8D8|E8B4A4B8d8|
+V: Vocal
+"D"z32|"Em"z32|"D"z32|"C"z32|
+V: Ins
+A16B16|e8b4a4b8d'8|a12b4f8d8|e32|
+V: Vocal
+"B"z32|"Em"z32|"D"z32|"C"z32|
+V: Ins
+Z|e8b4a4b8d'8|a12b4f8d8|e8b4a4b8d'8|
+V: Vocal
+"B"z32|"Em"z32|"D"z32|"C"z32|
+V: Ins
+a16b16|e8b4a4b8d'8|a12b4f8d8|e32|
+V: Vocal
+"B"z32|"Em"z32|"D"z32|"C"z32|
+V: Ins
+Z|E8B4A4B8d8|A12B4F8D8|E8B4A4B8d8|
+V: Vocal
+"D"z32|"Em"z32|"D"z32|"C"z32|
+V: Ins
+A16B16|E8B4A4B8d8|A12B4F8D8|E32|
+V: Vocal
+"B"z24z4B2d2|
+V: Ins
+F16z16|
+% chorus
+V: Vocal
+"Em"e4e4z8e2e2e2d2e4e2g2|"D"f4f4f4f2g2f4d4z4B2d2|"C"e4e4z8e2e2g4e8|"Bm"e2d2B2d4B2d2B2d2B2d2B2d4e4|
+V: Ins
+Z4|
+V: Vocal
+"Em"z32|"D"z32|"C"z32|"B"z32|
+V: Ins
+E8B4A4B8d8|A12B4F8D8|E32|F32|
+% verse
+V: Vocal
+"Em"z4G2G2G2G2G2G2G2G4G2G4G4|"D"z2G2G2G2G2G2G2G4G2G2G2G2G2G2G2-|"C"G2G2G2G2G2G2G2G4G2G2G2G2G2G2G2-|"B"G2z2G2G2G4z16z4|
+V: Ins
+Z3|z16z4B4d4f4|
+V: Vocal
+"Em"z32|"D"z32|"C"z32|"B"z32|
+V: Ins
+e8z16d8|A16z8F8|E32|F32|
+V: Vocal
+"Em"z32|"D"z32|"C"z32|"Bm"z32|
+V: Ins
+B8z16d8|A16z16|E8z24|F16z4B4d4f4|
+V: Vocal
+"Em"z32|"D"z32|"C"z32|"Bm"z32|
+V: Ins
+e8z24|Z|E8z24|F16z4B4d4f4|
+V: Vocal
+"Em"z32|"D"z32|"C"z32|"Bm"z32|
+V: Ins
+e8z24|Z|E8z24|F16z4B4d4f4|
+V: Vocal
+"Em"z32|"D"z32|"C"z32|"Bm"z32|
+V: Ins
+e8z24|Z|E8z24|F16z16|
+V: Vocal
+"Em"z32|"D"z32|"C"z32|"Bm"z24z4B2d2|
+V: Ins
+Z4|
+% chorus
+V: Vocal
+"Em"e4e4z8e2e2e2d2e4e2g2|"D"f4f4f4f2g2f4d4z4B2d2|"C"e4e4z8e2e2g4e8|"Bm"d2B2d2B2d4d2B2d4d8d4|
+V: Ins
+Z4|
+V: Vocal
+"C"e8d8B8A8|"D"A16z4B,4D4E4|"Em"E32-|"Em"E16z16|
+V: Ins
+Z4|
+% outro
+V: Vocal
+"Em"z32|"D"z32|"C"z32|"D"z32|
+V: Ins
+e8b4a4b8d'8|a12b4f8d8|e8b4a4b8d'8|a16b16|
+V: Vocal
+"Em"z32|"D"z32|"C"z32|"Bm"z32|
+V: Ins
+e8b4a4b8d'8|a12b4f8d8|e32|f32|
+V: Vocal
+"Em"z32|"Em"z32|"Em"z32|
+V: Ins
+e8b4a4b8d'8|a16b16|e32|

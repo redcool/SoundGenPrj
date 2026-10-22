@@ -1,0 +1,5 @@
+# 《刑错》双卡（双抽·盛世编钟）
+- A(v1a·seed 986501)：编钟盛世摇滚——编钟+木吉他+轻鼓，温厚男中音 100BPM
+- B(v1b·seed 986502)：编钟管弦——管弦+编钟+齐唱，庄重男声 104BPM
+- A引擎：serene rock with bronze bells and acoustic guitar, warm male baritone, 100 bpm, golden age, Mandarin Chinese vocals
+- B引擎：ceremonial orchestral rock with bronze bells and choir, dignified male vocal, 104 bpm, peace unbroken, Mandarin Chinese vocals
