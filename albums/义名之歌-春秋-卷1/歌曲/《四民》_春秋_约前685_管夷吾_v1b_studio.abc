@@ -1,0 +1,103 @@
+X:1
+T:
+M:4/4
+L:1/16
+Q:1/4=115
+V: Vocal clef=treble name="Vocal Melody" snm="Vocal"
+V: Ins clef=treble name="Ins Melody" snm="Inst."
+K:G
+% silence
+V: Vocal
+Z2|
+V: Ins
+Z2|
+% intro
+V: Vocal
+"Em"z16|"Em"z16|"Em"z16|"Em"z12z2B,D|
+V: Ins
+E2z4DEzGz2A^A=AG|E2z4DEzGz2A^A=AG|E2z4DEzGz2A^A=AG|Ez12z3|
+% verse
+V: Vocal
+"Em"E2B2B2BBA2E2zEEE|"Am"AAA2A2ABG2E2z2EE|"D"A2G2A2G2A2G2A2G2|"Em"A2B2d2B2B4zBBB|
+V: Ins
+Z4|
+V: Vocal
+"Em"e3e3B2A2B2A2E2|"Am"AAAAAAB2A4z4|"D"z2A2A2GGA2B2AGE2|"Em"E4z8zEEE|
+V: Ins
+Z4|
+V: Vocal
+"Em"E2EEE2E2E2E2E2E2|"Am"A2A2G2B4z4EE|"D"A2A2AAG2A2AGAGAG|"Em"AGA2B2B2B4zBBB|
+V: Ins
+Z4|
+V: Vocal
+"Em"e2e2e2BBABABA4|"Am"A2G2A4z6ED|"D"E2D4z8z2|"D"z16|
+V: Ins
+Z4|
+% chorus
+V: Vocal
+"Em"eeeee2z2eeeee2z2|"Am"eeeee2ede2g2z2ed|"D"e2e2e2B2A4AGAG|"Em"A2B2B4z6BB|
+V: Ins
+Z4|
+V: Vocal
+"Em"e2e2e2B4z4G2|"Am"A2AAB2A4z6|"D"z16|"D"z16|
+V: Ins
+Z4|
+% verse
+V: Vocal
+"Em"EEEEEEE2EEEEEEEE|"Am"EEE2E2EEE2G2z2ED|"D"EDE2EDEDE2EDEE2D|"Em"EDEDEDEDE2EGE2D2|
+V: Ins
+Z4|
+V: Vocal
+"Em"zEEEEEEEEEE2G2EE|"Am"EEE2G2EEE2E2G2EE|"D"EDEDEDEDEDEDE2z2|"Em"E2E2D2E4z6|
+V: Ins
+Z4|
+V: Vocal
+"Em"e4d3dB2A2A2B2-|"Am"B6z8EE|"D"A4z2AGA2B2E2D2|"Em"E8z4zEEE|
+V: Ins
+Z4|
+V: Vocal
+"Em"E2E2EDE2EEEDE2ED|"Am"EDEDE2G4z4ED|"D"EDEDEDEDEDEDE2ED|"Em"E2EDE2G4E2G2E2|
+V: Ins
+Z4|
+V: Vocal
+"Em"B4B4A4A3G|"Am"A2G2A4z6ED|"D"E2D2E2D2E2D2E2D2|"Em"E8z4zBBB|
+V: Ins
+Z4|
+V: Vocal
+"Em"e2e2e2e2e2BBB2BB|"Am"AAAAAAB2A4z2EE|"D"A2AGA2A2A2AGA2A2|"Em"B4D2E6z4|
+V: Ins
+Z4|
+V: Vocal
+"Em"e4d4B4A3G|"Am"A2B6z6E2|"D"A2G2A3GA2B2E4-|"Em"E4z12|
+V: Ins
+Z4|
+% chorus
+V: Vocal
+"Em"e2e2e2B2A2B2B4|"Am"A2A2G2B4z6|"D"AGAGA2AGA4z4|"Em"A2B2E2D2E4z4|
+V: Ins
+Z4|
+V: Vocal
+"Em"e2e2e2B2A2B4AG|"Am"A2A2AAB2A4z4|"D"A2A2A2G2A2B2E2D2|"Em"E8z8|
+V: Ins
+Z4|
+V: Vocal
+"Em"e2e2e2B2A2B2B4|"Am"A2A2G2B4z6|"D"AGAGA2AGA4z4|"Em"A2B2E2D2E4z4|
+V: Ins
+Z4|
+V: Vocal
+"Em"e2e2e2B2A2B4AG|"Am"A2A2AAB2A4z4|"D"A2A2A2G2A2B2E2D2|"Em"E8z8|
+V: Ins
+Z4|
+% outro
+V: Vocal
+"Em"z16|"Am"z16|"D"z16|"Em"z16|
+V: Ins
+z2ez2ez2ezezg4|z2ez2ez2ezezg4|z2ez2ez2ezezg4|z2ez2ez2ezezg4|
+V: Vocal
+"Em"z16|"Am"z16|"D"z16|"Em"z16|
+V: Ins
+z2ez2ez2ezezg4|z2ez2ez2ezezg4|z2ez2ez2ezezg4|Z|
+V: Vocal
+"Em"z16|
+V: Ins
+Z|
