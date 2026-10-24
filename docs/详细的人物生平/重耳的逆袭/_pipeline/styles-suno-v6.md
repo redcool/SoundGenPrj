@@ -1,6 +1,6 @@
-# 重耳的逆袭人生 · 三十曲 Suno v6 英文 Style 汇总(武侠摇滚版)
+# 重耳的逆袭人生 · 三十二曲 Suno v6 英文 Style 汇总(武侠摇滚版)
 
-> 按歌单 1-30 顺序;Style 框粘同名 .style.txt,歌词框粘同名 .suno.txt。方向:国风武侠摇滚,中西合并配器(电吉他/电贝司/电琵琶/古筝/竹笛/唢呐/低音大鼓),金属·EDM·雷鬼按曲情点染;负面链含 no English vocals。
+> 按歌单 1-31 顺序(插章 10-2 列于 10 与 11 之间);Style 框粘同名 .style.txt,歌词框粘同名 .suno.txt。方向:国风武侠摇滚,中西合并配器(电吉他/电贝司/电琵琶/古筝/竹笛/唢呐/低音大鼓),金属·EDM·雷鬼按曲情点染;负面链含 no English vocals。
 
 ## 1 骊姬之乱
 
@@ -60,6 +60,12 @@ Dark Chinese folk-rock elegy, slow 68-72 BPM, minor pentatonic. Muted palm-muted
 
 ```
 Lush Chinese folk-rock waltz of temptation, mid-tempo 74-80 BPM, swaying. Warm strings and guzheng open like a banquet hall; electric bass and soft rock groove invite; bamboo dizi weaves luxury; se zither and electric pipa trade pretty phrases; choruses bloom but stay elegant; a subtle reggae lilt keeps it dreamy. Male lead vocal in classical Chinese, contented and velvety in verses; a clear female voice as the wise wife, firm and loving, calling him back to the road. Mood: a prince drowning gratefully in kindness - horses, marriage, wine - while one woman sees the trap inside the gift. 3-4 minutes. No English vocals, no growling, no death metal, no autotune, no party pop.
+```
+
+## 10-2 学习霸主
+
+```
+Scholarly Chinese wuxia rock study anthem, mid-tempo 76-82 BPM. Lantern-lit guqin and bamboo dizi open like a night classroom; electric bass and a disciplined marching groove keep drill order; clean electric guitars take notes in tidy pentatonic phrases; guzheng runs sparkle like copying brushstrokes; bianzhong bell accents toll at each lesson; midway the arrangement darkens - low strings and a slow funeral bell drift over the hegemon's deathbed, suona muted like distant civil strife - then war drums and an EDM-style riser lift the final chorus into resolve. Male lead vocal in classical Chinese, thoughtful and precise like a student reciting lessons; low male choir answers like a classroom roll call; restrained power throughout. Mood: while their prince sleeps in silk, five exiles audit the first hegemon's hundred-year playbook - how he won with reforms and the honor-the-throne banner, how he fell to flatterers and a broken succession - banking every page for a crown of their own. 3-4 minutes. No English vocals, no growling, no death metal, no autotune, no party pop.
 ```
 
 ## 11 乐不思晋
@@ -180,4 +186,10 @@ Vindicated Chinese wuxia rock, mid-tempo 78-86 BPM. War drums and electric bass 
 
 ```
 Grand wuxia Chinese epic-rock coronation, building 76-88 BPM. Bianzhong bells and low bass drum open with ritual weight; electric guitars and electric bass join war drums; electric pipa and guzheng answer in courtly dialogue; bamboo dizi and suona crown the choruses; EDM textures and risers lift the mandate scene; the final verses drop to a near-whisper over a solo xun ocarina as snow falls on the coffin city. Male mid-low vocal in classical Chinese, dignified narrative, male-female choir rising without screaming. Mood: nine years in three steps - survive the palace fire, honor the Son of Heaven, accept the mandate, then the coffin at Quwo. 3-4 minutes. No English vocals, no growling, no death metal vocals, no autotune, no party pop.
+```
+
+## 31 烛之武退秦师
+
+```
+Nocturnal Chinese wuxia rock persuasion ballad, mid-slow 72-78 BPM. Distant war drums and a low electric bass pulse two siege camps across the plain; solo guqin and xun ocarina carry the old man's calm through the night; bamboo dizi threads the rope descent; electric pipa crackles like sparks of argument inside the tent; bianzhong accents toll the watch; the chorus opens with a low male choir like a besieged city holding its breath; the bridge drops to near-silence with sparse strings for the hegemon's three refusals, then a restrained EDM riser lifts the final chorus. Aged male lead vocal in classical Chinese, dry, unhurried, story-worn, quiet iron underneath; a brief lower narration voice as Duke Wen of Jin; restrained throughout. Mood: an overlooked old counselor lowered by rope between two armies, dismantling an alliance sentence by sentence - and a hegemon who answers betrayal not with pursuit but with three reasons to march home. 3-4 minutes. No English vocals, no growling, no death metal, no autotune, no party pop.
 ```
