@@ -1,0 +1,192 @@
+X:1
+T:
+M:4/4
+L:1/32
+Q:1/4=118
+V: Vocal clef=treble name="Vocal Melody" snm="Vocal"
+V: Ins clef=treble name="Ins Melody" snm="Inst."
+K:F#
+% intro
+V: Vocal
+z16"D#m"z16|"D#m"z32|"D#m"z32|"D#m"z32|
+V: Ins
+Z|z8d'4f'4g'4a'2z8z2|Z2|
+V: Vocal
+"D#m"z32|"D#m"z32|
+V: Ins
+Z|z16z4F4G4A4|
+V: Vocal
+M:9/8
+"D#m"z32z4|
+V: Ins
+M:9/8
+c6A6c4d4f4d6f6|
+V: Vocal
+M:4/4
+"D#m"z32|"D#m"z32|"D#m"z32|"D#m"z32|
+V: Ins
+M:4/4
+g8a8c'12z4|d'32-|d'32|Z|
+V: Vocal
+"D#m"z32|"D#m"z32|"D#m"z32|"D#m"z32|
+V: Ins
+Z4|
+V: Vocal
+"D#m"z32|"D#m"z32|"D#m"z32|"D#m"z32|
+V: Ins
+Z|D4D4F4D4G4D4^^G4A4|D4D4F4D4G4D4^^G4A4|D4D4F4D4G4D4^^G4A4|
+V: Vocal
+"D#m"z24d4c4|
+V: Ins
+c6A6^^G6^G6z8|
+% verse
+V: Vocal
+"D#m"d8d4c4d8d8|"D#m"z24d4c4|"B"d4d12d4f8d4-|"B"d4z16d4d4c4|
+V: Ins
+Z|D2z2D4F4D4G4D4z8|Z2|
+V: Vocal
+"C#"c8c4A4c8c8|"C#"z8G4A4G4A4c8|"D#m"A8z24|"D#m"z24d4c4|
+V: Ins
+Z2|z16z4d2z8z2|d'6c'6a6g6z8|
+V: Vocal
+"D#m"d4d12d4c8d4-|"D#m"d4z16z4d4c4|"B"d16d4f8d4-|"B"d4z16d4d4c4|
+V: Ins
+Z4|
+V: Vocal
+"C#"c8G8z16|"C#"z4G4G4A4c8A8|"D#m"z12A,4C4C8D4-|"D#m"D4z24z4|
+V: Ins
+Z3|z12A,4C8D8|
+V: Vocal
+"D#m"z32|"D#m"z32|"D#m"z32|"D#m"z16z4d4d4c4|
+V: Ins
+D,2z2D,2D,2F,2D,2D,2D,2G,2D,2D,2D,2^^G,2A,2A,4|D,2z2D,2D,2F,2D,2D,2D,2G,2D,2D,2D,2^^G,4A,4|D,4D,4F,4D,4G,4D,4^^G,4A,4|C6A,6^^G,6^G,6z8|
+V: Vocal
+"D#m"d8d8z16|"D#m"z4d4d4d2d2f4d4d4c4|"B"d8d8z16|"B"z16z4d2d2f4d4|
+V: Ins
+Z2|z16f8e8|d16c4z12|
+V: Vocal
+"C#"c8c4A4c8c8|"C#"z8G4A4c4A4c8|"D#m"A8z24|"D#m"z16z4d4d4d4|
+V: Ins
+Z2|z16f8e8|d16c4z12|
+V: Vocal
+"D#m"z32|"D#m"z8d4d4f8d4c4|"B"d8z24|"B"z16f8d4c4|
+V: Ins
+Z2|z16f8e8|d12e4z16|
+V: Vocal
+"C#"c12c16z4|"C#"z16f8d4c4|"D#m"d32-|"D#m"d32|
+V: Ins
+Z4|
+% chorus
+V: Vocal
+"D#m"d8d8d4d4f8|"D#m"d8z4A4f8d4c4|"B"d4d4f8d8z4c4|"B"d4d4f4f4d8z8|
+V: Ins
+Z4|
+V: Vocal
+"C#"c8c8c4c4c4d4|"C#"c8z8f4d4c4d4|"D#m"d8z24|"D#m"z12A4f4d4f8|
+V: Ins
+Z2|z8D2z2D2z2D2z2D2z2D2z2D2z2|D2z2D2z2D2z16z6|
+V: Vocal
+"D#m"d32-|"D#m"d16z8d4c4|
+V: Ins
+Z2|
+% verse
+V: Vocal
+"D#m"d4d4d4c4d4d4f8|"D#m"d8z12d4d4c4|"B"d8d4c4d8d8|"B"z16z4d2d2f4d4|
+V: Ins
+Z3|z4A2z2A2z2A2z2A2z12z2|
+V: Vocal
+"C#"c8c8z4c4c4d4|"C#"c8z12A2A2c4A4|"D#m"d4d4d4c4d4f8d4-|"D#m"d8z12d4d4c4|
+V: Ins
+Z4|
+V: Vocal
+"D#m"d8d4c4d8f8|"D#m"d8z16z4c4|"B"d8d4c4d4f8d4-|"B"d16-d4z12|
+V: Ins
+Z3|z16z4f2z2f2z6|
+V: Vocal
+"C#"z32|"C#"z32|"D#m"z32|"D#m"z16z4d4d4d4|
+V: Ins
+Z|z16f8e8|d32-|d16z16|
+V: Vocal
+"D#m"d8d8d4c4d8|"D#m"z16z4d4d4c4|"B"d8d8d4d4z8|"B"z24f4d4|
+V: Ins
+Z|z4D2z2F2z2D2z2G2z12z2|Z|B,2z2B,2z2F2z2B,2z2G2z12z2|
+V: Vocal
+"C#"c8c8z16|"C#"z8G4A4c8c4A4|"D#m"c4A8z16z4|"D#m"z16z4d4d4c4|
+V: Ins
+Z2|z16G2z2D2z2^^G2z2A2z2|D2z2D2z2F2z2D2z2G2z12z2|
+V: Vocal
+"D#m"d8d8d4d8c4|"D#m"d8f8d4d4d4c4|"B"d8d8f4d4d4c4|"B"d8z16f4d4|
+V: Ins
+Z3|z8F2z2B,2z2G2z2B,2z8z2|
+V: Vocal
+"C#"c12c16-c4-|"C#"c12z12c8|"D#m"d32-|"D#m"d32|
+V: Ins
+Z4|
+% chorus
+V: Vocal
+"D#m"z32|"D#m"z32|"B"z32|"B"z32|
+V: Ins
+Z4|
+V: Vocal
+"C#"z32|"C#"z32|"D#m"z32|"D#m"z32|
+V: Ins
+Z4|
+V: Vocal
+"D#m"z32|"D#m"z32|"B"z32|"B"z32|
+V: Ins
+Z4|
+V: Vocal
+"C#"z32|"C#"z32|"D#m"z32|"D#m"z24d4c4|
+V: Ins
+Z4|
+% verse
+V: Vocal
+"D#m"d8d8d4c4d4d4-|"D#m"d4z16d4d4c4|"B"d16f4f8d4-|"B"d4z16f2f2f4d4|
+V: Ins
+Z4|
+V: Vocal
+"C#"c8c8z16|"C#"z12c4c4c2c2c4A2A2|"D#m"d8d8d4f8d4-|"D#m"d8z12d4d4c4|
+V: Ins
+Z4|
+V: Vocal
+"D#m"d8d8d8d4c4|"D#m"d8d8z8d4c4|"B"d8f16d4c4|"B"d8d8z16|
+V: Ins
+Z3|z16G2z2B,2z2^^G2z2A4|
+V: Vocal
+"C#"z4c4c4c4c8c8|"C#"c8z16c4A4|"D#m"d8d8d4d4c4f4-|"D#m"f4d24z4|
+V: Ins
+Z4|
+V: Vocal
+"D#m"z32|"D#m"z32|
+V: Ins
+Z2|
+% chorus
+V: Vocal
+"D#m"d8d8d4d4f4f4|"D#m"d8z16d4c4|"B"d8d4c4d4f8f4-|"B"f4d8z16z4|
+V: Ins
+Z4|
+V: Vocal
+"C#"c8c4c4c8c8|"C#"c8c8z12A4|"D#m"d4d4d4d4f8d4c4|"D#m"d32|
+V: Ins
+Z4|
+V: Vocal
+"D#m"d8d8d4d4f4f4|"D#m"d8z24|"B"d8d8d4d4f4f4|"B"d8z24|
+V: Ins
+Z4|
+V: Vocal
+"C#"c8c8c4c4c4d4|"C#"c8z24|"D#m"d8d8d4d4f4f4|"D#m"d32|
+V: Ins
+Z|z16g4f4e4c4|Z2|
+% outro
+V: Vocal
+"D#m"z32|"D#m"z32|"B"z32|"B"z32|
+V: Ins
+D8F8G8^^G4A4|D8F8G8^^G4A4|B,8F8G8^^G4A4|B,8F8G8^^G4A4|
+V: Vocal
+"C#"z32|"C#"z32|"D#m"z32|"D#m"z32|
+V: Ins
+C8F8G8^^G4A4|C8F8G8^^G4A4|D8F8G8^^G4A4|D6F6D6F6D4C4|
+V: Vocal
+"D#m"z32|"D#m"z32|
+V: Ins
+D16z16|Z|
