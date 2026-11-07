@@ -1,0 +1,44 @@
+在 AI 音乐生成工具 Suno 中，使用中国传统乐器（如竹笛、笙、琵琶、唢呐、大鼓）来构建音乐风格（Style），是一项非常有趣且能碰撞出独特火花的尝试。
+为了让 Suno 能够精准识别并完美融合这些乐器，你需要巧妙地利用 Style 提示词（Prompt）。以下为你详细讲解如何在 Suno 中运用这些乐器构建不同的音乐风格，并提供实用的提示词组合。
+
+1. 核心乐器的 Suno 英文关键词对照
+
+Suno 目前对英文提示词的理解最为精准。首先，我们需要知道这五种乐器对应的最佳英文关键词：
+• 竹笛 (Dizi / Chinese Bamboo Flute)：带来空灵、悠扬、古典的旋律感。
+• 笙 (Sheng)：中国古老的和声乐器，能提供独特的背景铺垫（Pad）和神秘感。
+• 琵琶 (Pipa)：颗粒感强，既能弹奏温柔的轮指，也能进行激烈的扫弦（如《十面埋伏》）。
+• 唢呐 (Suona)：极具穿透力，流氓乐器之首，适合高潮、悲壮、或极其喜庆、暴烈的场景。
+• 大鼓 (Chinese Daguan / Tang Gu / Traditional Chinese Drums)：提供厚重、震撼的低音节奏与史诗感。
+
+2. 风格融合方案（直接复制到 Style 框中）
+
+你可以根据想要的音乐氛围，将这五种乐器与不同的现代音乐流派进行融合。以下是三种推荐的风格配方：
+
+方案 A：国风电音 / 赛博国潮（Guochao Electro）
+
+将传统乐器与现代电子舞曲结合，适合制作节奏感强、炸裂、充满现代感的音乐。唢呐和大鼓在这里是主角。
+• Style 提示词：
+Guochao electro, suona lead, heavy tang gu beat, pipa riffs, sheng pad, chinese bamboo flute, energetic, cyberpunk chinese style, 128 bpm
+• 风格讲解： 唢呐作为主旋律（Lead）负责炸场，大鼓（tang gu）提供沉重的低音电音节奏，琵琶和竹笛穿插在副歌或过渡段，笙作为背景合成器音色（Pad）增加神秘的赛博空间感。
+
+方案 B：国风史诗 / 影视配乐风格（Epic Cinematic Chinese）
+
+适合营造宏大、悲壮、战争、侠客江湖的场景。大鼓、琵琶和竹笛是核心。
+• Style 提示词：
+Epic cinematic, heavy chinese war drums, dramatic suona, expressive pipa, ethereal dizi, sheng harmony, orchestral, grand, majestic, powerful
+• 风格讲解： 大鼓模拟战场战鼓的震撼，竹笛和笙描绘大战前的宁静或江湖的辽阔，琵琶的急促弹奏渲染紧张感，而唢呐则在最悲壮或最高潮的时刻切入，极具情感爆发力。
+
+方案 C：古风唯美 / 浪漫流行（Chinese Pop / Guifeng）
+
+适合抒情、温柔、叙事性的中国风流行歌曲（类似周杰伦的中国风或仙侠剧插曲）。竹笛、笙和琵琶是主力。
+• Style 提示词：
+Chinese pop ballad, emotional, gentle dizi flute, acoustic pipa, sheng chords, light tang gu rhythm, melancholic, beautiful, traditional meets modern
+• 风格讲解： 整体基调是温柔的流行抒情。竹笛负责吹奏主导的唯美旋律，琵琶轻轻拨弦做伴奏，笙提供和弦（Chords）支持，大鼓则弱化为轻柔的国风节奏鼓点，避免喧宾夺主。
+
+3. Suno 进阶使用小贴士（Tips）
+
+1. 关键词的权重： 在 Suno 的 Style 框中，越靠前的词权重越高。如果你希望这首歌“唢呐味”最浓，就把 suona 或 suona solo 放在最前面。
+2. 避免互相冲突： 唢呐和竹笛都属于高音/中高音管乐器。如果在同一段歌词里同时出现，Suno 可能会把它们混在一起。如果你想要它们轮流出现，可以在歌词（Lyrics）中加入结构标签，例如：
+	• [Instrumental Solo: Dizi]（竹笛独奏）
+	• [Drop: Suona and Heavy Drums]（高潮：唢呐与大鼓）
+3. 乐器错觉： 偶尔 Suno 无法 100% 还原“笙”或“大鼓”的纯正音色，它可能会用西方类似的乐器（如手风琴/管风琴替代笙，太鼓/定音鼓替代大鼓）来融合。这属于正常现象，可以通过多次“Generate（生成）”来抽卡，筛选出中国民乐味最正的那一首。
