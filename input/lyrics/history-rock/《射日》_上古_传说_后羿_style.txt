@@ -1,6 +1,7 @@
-# 《射日》· 风格建议（style）—— 单抽（楚辞神游体 × 力量金属）
-> 基调：后羿（神话·为民射日）→ 燃·狂 × 神游；楚辞启示录：兮式拖腔 + 乱曰收尾 + 神游语汇。
-## 单卡（v1 · seed 835101）
-- 基座：力量金属（140 BPM） | 混搭：神游/楚辞 | 主奏：失真电吉他 + **唢呐点睛** | 节奏：双踩战鼓 | 嗓音：高亢男声（兮式拖腔）+ 终曲齐唱（乱曰） | 情绪：燃·狂·神游
-## 引擎
-- v1: mythic Chu-sao power metal, double-kick war drums and blazing guitar with suona accents, soaring male voice with drawn-out xi vowels, mythic fierce energy, 140 bpm, Mandarin Chinese vocals
+# 《射日》 双卡（五要素完整版）
+
+## A（v 卡）
+power metal, heroic and blazing; 156 bpm, galloping double kick; twin electric guitars in harmony, tolling bianzhong accents, guzheng flourishes, low brass swells, distant thunder background; high male lead, clear and controlled, heroic but not screamed; bright, punchy, arena-wide production, Mandarin Chinese vocals
+
+## B（b 卡）
+groove metal, dark and mythic; 138 bpm, heavy syncopated groove with war drums; down-tuned riff, war drum, suona stab, low brass drone, crackling fire ambience in background; mid-range male lead, aggressive but controlled, dry delivery; raw, close, dense production, Mandarin Chinese vocals

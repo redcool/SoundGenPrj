@@ -4,7 +4,12 @@
 产出: <prefix>.mp3 (48k stereo) + <prefix>.abc + <prefix>.json (元数据)
 """
 import argparse, json, time, re, os, urllib.request, urllib.parse
-HOST = "http://127.0.0.1:8091"
+HOST = "http://127.0.0.1:8090"  # YuE2-Studio 3.7 引擎
+
+# 人声锁定：禁止 any ad-libs / yeah-oh 助气 / 和声垫底，只唱歌词正文
+VOCAL_LOCK = (", solo lead vocal only singing the given lyrics, no ad-libs, no yeah, no oh, no uh, no hey, "
+              "no improvised vocalizations, no backing vocals, no choir, no shout-along, no call and response, "
+              "no vocal fills between lines, clean articulation, Mandarin Chinese vocals, no English vocals")
 def run():
     ap = argparse.ArgumentParser()
     ap.add_argument("--lyrics", required=True)
@@ -13,7 +18,7 @@ def run():
     ap.add_argument("--out-prefix", required=True)
     a = ap.parse_args()
     lyrics = open(a.lyrics, encoding="utf-8").read()
-    body = json.dumps({"id": "sg_" + os.path.basename(a.out_prefix).replace("\\", "_")[:40], "style": a.style, "lyrics": lyrics, "seed": a.seed}).encode("utf-8")
+    body = json.dumps({"id": "sg_" + os.path.basename(a.out_prefix).replace("\\", "_")[:40], "style": a.style + VOCAL_LOCK, "lyrics": lyrics, "seed": a.seed}).encode("utf-8")
     t0 = time.time()
     req = urllib.request.Request(HOST + "/synth", data=body, headers={"Content-Type": "application/json"})
     jid = json.loads(urllib.request.urlopen(req, timeout=60).read())["id"]

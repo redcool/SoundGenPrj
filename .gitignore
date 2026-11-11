@@ -32,3 +32,5 @@ node_modules/
 *.png
 *.jpg
 *.jpeg
+# SimpleAIBrain 身份凭证,严禁入库(enroll 自动追加)
+.brain.json

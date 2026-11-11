@@ -104,3 +104,10 @@ convert_audio.ps1  # 主逻辑，参数：-InputDir -SourceExt -TargetExt -Outpu
 > 会话结束(或用户说"存储记忆"):调 `memory.submit_session`,`session_id`=当前会话 id,`kind`="digest",`content`=本会话关键决定与新知识(400-1200 字,带出处,不含密钥)。
 > 用户口令全表(存储记忆/获取记忆/查找记忆/记忆体检/登记记忆):H:/ai_works/SimpleAIBrain/docs/用户指令.md。
 > 不要直接读记忆库数据文件当记忆来源——只有走工具才有正确的可见性与脱敏。
+
+## 记忆 project 标签(硬性,2026-10-24 确立)
+
+- 本工作区所有 `memory.save` / `memory.submit_session` 调用,工具参数一律带 `project: "SoundGenPrj"`(与 `_brainToken` 同级参数,非 HTTP 头)。
+- 检索本项目记忆:`memory.context` / `memory.search` 带 `project: "SoundGenPrj"`。
+- 无标签条目无法事后补标(`memory.edit` 不支持改 project 字段),存错只能重存。
+- 背景:2026-10-24 审查发现历史条目 48/48 无标签、按 project 检索 0 命中。完整约定见 H:/ai_works/SimpleAIBrain/docs/project-tag-convention.md。

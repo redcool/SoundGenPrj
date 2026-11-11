@@ -1,26 +1,7 @@
-# 《三过家门》· 风格建议（style）
+# 《三过家门》 双卡（五要素完整版）
 
-> 曲风矩阵：大禹（治水·圣王·坚忍）→ **史诗民谣摇滚**（苍茫木吉他+行军鼓，跋涉感）。
-> 基调：历史摇滚·侠风（民谣摇滚分支）—— 木吉他 × 行军鼓 × 苍茫人声，副歌辽阔可齐唱。
+## A（v 卡）
+Chinese epic heavy metal, slow and burdened, with a flood-scale weight; 108 bpm, marching double kick; down-tuned electric guitar riff with tolling bianzhong, deep dagu war drum, low bowed bass drone, distant water roar in the background; deep male lead, low register, weathered and restrained, close-mic; dry, wide, unpolished production, Mandarin Chinese vocals
 
-## 1. YuE2（本地）
---style 建议：
-
-```
-epic Chinese folk-rock ballad, weathered male voice with lonely narration, wide-open acoustic soundscape, acoustic guitar and war drums, vast melancholic flowing melody, ten years of journey under the flood, simple anthemic chorus, dark majestic river imagery, subtle bamboo flute, gentle mandolin color, Mandarin Chinese vocals
-```
-
-参数：歌词驱动、planning full、guidance 1.0、seed 固定、max_duration 340、中文发声。词长 560+（≥4:00 原则）。
-
-## 2. Music3 caption
-Global Metadata:
-genre: 历史摇滚·侠风 / 史诗民谣摇滚 (Chinese epic folk-rock, flood ballad)
-mood: 苍茫、坚忍、辽阔 (vast, resolute, wistful)
-bpm: 100, time signature: 4/4, duration: ~5:00
-language: Mandarin Chinese
-instruments: acoustic guitar, war drums, bamboo flute, distant electric guitar swells, deep bass
-Vocal Details: lead male voice, weathered lonely narration in verses, warm anthemic chorus, no harsh distortion
-Arrangement: river-sound intro (flute+guitar) → verse1 → verse2 → chorus (drums enter, singalong) → verse3 → chorus → bridge (voice+drums only) → verse4 → work chant (shouted) → final chorus (big, then guitar fade)
-
-## 3. suno 一行
-epic Chinese folk-rock flood ballad, male weary narrator, acoustic guitar, war drums, flute, vast anthemic chorus, 4-5 minutes, Mandarin
+## B（b 卡）
+symphonic metal, solemn and mournful; 96 bpm, slow half-time with a rising string swell; low strings, guzheng arpeggio, heavy guitar chug, sparse bronze bell hits, faint flood ambience; solemn male baritone, measured phrasing, aged and story-worn; wide chamber reverb, natural production, Mandarin Chinese vocals
